@@ -3,10 +3,8 @@ import Generation from './Generation';
 
 function Main(props) {
 
-  const [genCount, setGenCount] = React.useState(1);
-
   let sections=[0];
-  for (let i = 1; i < genCount; i++) {
+  for (let i = 1; i < props.genCount; i++) {
     sections.push(i)
   }
 
