@@ -1,8 +1,8 @@
 function Main() {
 
   return (
-    <main class="content">
-      <section class="buffer">
+    <main className="content">
+      <section className="buffer">
       </section>
    </main>
   )

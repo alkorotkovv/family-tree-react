@@ -1,9 +1,9 @@
 function Footer() {
 
   return (
-    <footer class="footer">
-      <div class="footer__container">
-        <p class="footer__copyright">&copy; 2022. Коротков Александр</p>
+    <footer className="footer">
+      <div className="footer__container">
+        <p className="footer__copyright">&copy; 2022. Коротков Александр</p>
       </div>
     </footer>
   )
