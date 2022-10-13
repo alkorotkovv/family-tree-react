@@ -1,0 +1,52 @@
+.button-addcard {
+  width: 80px;
+  height: 135px;
+  margin: 10px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  background-color: white;
+  color: black;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 1.06;
+}
+
+.button-addcard:hover {
+  cursor: pointer;
+  border: 2px solid black;
+}
+
+@media (max-width: 1100px) {
+  .button-addcard {
+    width: 60px;
+    height: 101.25px;
+    margin: 8px;
+    border-radius: 8px;
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 767px) {
+  .button-addcard {
+    width: 40px;
+    height: 67.5px;
+    margin: 6px;
+    border-radius: 6px;
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 550px) {
+  .button-addcard {
+    width: 25px;
+    height: 42.1875px;
+    margin: 4px;
+    border-radius: 4px;
+    font-size: 18px;
+  }
+}

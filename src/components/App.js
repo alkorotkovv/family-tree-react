@@ -1,26 +1,14 @@
 import Header from './Header';
+import Footer from './Footer';
+import Main from './Main';
 
 function App() {
   
   return (
     <div className="page">
-
-    <Header />
-
-
-    <main class="content">
-      <section class="buffer">
-      </section>
-
-
-
-    </main>
-
-    <footer class="footer">
-      <div class="footer__container">
-        <p class="footer__copyright">&copy; 2022. Коротков Александр</p>
-      </div>
-    </footer>
+      <Header />
+      <Main />
+      <Footer />
 
 
     <div class="popup popup_type_add ">

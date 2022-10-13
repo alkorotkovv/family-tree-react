@@ -1,0 +1,27 @@
+.header__title {
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 1.06;
+  text-transform: uppercase;
+  justify-self: center;
+}
+
+@media (max-width: 1100px) {
+  .header__title {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 767px) {
+  .header__title {
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 550px) {
+  .header__title {
+    font-size: 22px;
+  }
+}
