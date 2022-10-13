@@ -14,11 +14,9 @@ function App() {
 
   function closeAllPopups() {
     setIsAddPersonPopupVisible(false);
-    //setSelectedArea(-1);
   }
 
   function handleAddPersonClick(id) {
-    //console.log(id)
     setSelectedArea(id)
     setIsAddPersonPopupVisible(true);
   }
