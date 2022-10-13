@@ -14,7 +14,7 @@ function Main(props) {
     <main className="content">
       {
         sections.map(element => 
-          <Generation key={element} id ={element} onAddPersonClick={props.onAddPersonClick} />
+          <Generation key={element} id ={element} onAddPersonClick={props.onAddPersonClick} persons={props.persons} area={props.area} />
         )
       }
    </main>

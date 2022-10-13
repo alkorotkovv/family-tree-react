@@ -31,7 +31,14 @@ function AddPersonPopup(props) {
 
   function handleSubmit(evt) {
     evt.preventDefault();
-    props.onSubmit();
+    const personObject = {
+      name: name,
+      image: image,
+      place: place,
+      birthday: birthday,
+      about: about
+    }
+    props.onSubmit(personObject);
   }
 
   return (
