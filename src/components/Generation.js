@@ -1,5 +1,5 @@
-import AreasCount from "../utils/constants.js";
-import Area from "./Area";
+import {AreasCount} from "../utils/constants.js";
+import AddPerson from "./AddPerson";
 
 function Generation(props) {
 
@@ -12,7 +12,7 @@ function Generation(props) {
     <section className="generation" id={props.id}>
       {
         areas.map(element => 
-          <Area key={element} id ={element}/>
+          <AddPerson key={element} id={element} onAddPersonClick={props.onAddPersonClick} />
         )
       }
     </section>

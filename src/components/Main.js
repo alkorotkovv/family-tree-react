@@ -1,7 +1,7 @@
 import React from 'react';
 import Generation from './Generation';
 
-function Main() {
+function Main(props) {
 
   const [genCount, setGenCount] = React.useState(1);
 
@@ -14,7 +14,7 @@ function Main() {
     <main className="content">
       {
         sections.map(element => 
-          <Generation key={element} id ={element}/>
+          <Generation key={element} id ={element} onAddPersonClick={props.onAddPersonClick} />
         )
       }
    </main>
