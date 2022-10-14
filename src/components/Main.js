@@ -20,6 +20,8 @@ function Main(props) {
             onAddPersonClick={props.onAddPersonClick}
             onCardClick={props.onCardClick}
             onCardDeleteClick={props.onCardDeleteClick}
+            onDrop={props.onDrop}
+            onDrag={props.onDrag}
           />
         )
       }

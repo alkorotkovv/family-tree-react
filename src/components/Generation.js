@@ -22,9 +22,12 @@ function Generation(props) {
                 key={index} 
                 id={index} 
                 genid={props.id}                 
-                persons={genPersons} 
-                area={props.area}                  
+                genPersons={genPersons} 
+                persons={props.persons}
+                area={props.area}
+                index={props.id}                  
                 onAddPersonClick={props.onAddPersonClick} 
+                onDrop={props.onDrop}
               />)
           else
             return ( 
@@ -35,6 +38,7 @@ function Generation(props) {
                 card={element}
                 onCardClick={props.onCardClick}
                 onCardDeleteClick={props.onCardDeleteClick}
+                onDrag={props.onDrag}
               />)         
         })
       }

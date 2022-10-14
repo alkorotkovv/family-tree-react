@@ -43,6 +43,7 @@ function App() {
   function closeAllPopups() {
     setIsAddPersonPopupVisible(false);
     setIsCardPopupVisible(false);
+    setSelectedArea(-1)
   }
 
   function handleAddPersonClick(id) {
@@ -54,7 +55,7 @@ function App() {
     let copy = Object.assign([], persons);
     let index = selectedArea;
     copy[index] = personObject;
-    copy[index].area = index;
+    copy[index].area = index;    
     setPersons(copy);
     setIsAddPersonPopupVisible(false);
   }
@@ -71,6 +72,27 @@ function App() {
     setPersons(copy);
   }
 
+  function handleDrag(card) {
+    setSelectedCard(card)
+  }
+
+  function handleDrop(area) {
+    //Запоминаем текущие индексы (порядковые номера)
+    let toindex = area;
+    let fromindex = selectedCard.area;
+    let copy = Object.assign([], persons);
+    //Создаем клон выбранной для перемещения карточки
+    const newCard = {};
+    Object.assign(newCard, selectedCard);
+    //Присваиваем этому клону индекс = новый индекс (место куда переместили карточку)
+    newCard.area = area;
+    setSelectedCard(newCard)
+    //Обновляем массив со всеми данными
+    copy[toindex] = newCard;
+    copy[fromindex] = {};
+    setPersons(copy);
+  }
+
   return (
     <div className="page">
       <Header />
@@ -81,12 +103,15 @@ function App() {
         onAddPersonClick={handleAddPersonClick} 
         onCardClick={handleCardClick}
         onCardDeleteClick={handleCardDeleteClick}
+        onDrop={handleDrop}
+        onDrag={handleDrag}
       />
       <Footer />
       <AddPersonPopup 
         isOpen={isAddPersonPopupVisible} 
         onClose={closeAllPopups} 
         onSubmit={handleAddPerson}
+        
       />
       <CardPopup 
         isOpen={isCardPopupVisible}

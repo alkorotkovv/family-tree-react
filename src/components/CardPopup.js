@@ -3,8 +3,6 @@ import photo from '../images/photo.png';
 
 function CardPopup(props) {
 
-  console.log(props)
-
   return (
     <Popup isOpen={props.isOpen} onClose={props.onClose}>
         <div className="card-scale">

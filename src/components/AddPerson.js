@@ -7,9 +7,18 @@ function AddPerson(props) {
   function handleClick() {
     props.onAddPersonClick(areaId);
   }
+  
+  function handleDragOver(evt) {
+    evt.preventDefault();
+  }
+
+  function handleDrop(evt) {
+    evt.preventDefault();
+    props.onDrop(areaId)
+  }
 
   return (
-    <div className="area" onClick={handleClick} id={areaId}>
+    <div className="area" onClick={handleClick} onDragOver={handleDragOver} onDrop={handleDrop} id={areaId}>
       +
     </div>
   )
