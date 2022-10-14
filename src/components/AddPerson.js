@@ -19,7 +19,7 @@ function AddPerson(props) {
 
   return (
     <div className="area" onClick={handleClick} onDragOver={handleDragOver} onDrop={handleDrop} id={areaId}>
-      +
+      <p>+</p>
     </div>
   )
 }

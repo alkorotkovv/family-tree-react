@@ -10,10 +10,21 @@
   box-sizing: border-box;
   border-radius: 10px;
   box-shadow: 0px 0px 8px 4px rgba(0, 0, 0, 0.3) inset;
+  font-size: 25px;
+  transition: 0.4s;
+  color: grey;
+}
+
+@keyframes rotation {
+  0% {transform: scale(1);}
+  100% {transform: scale(1.1);}
 }
 
 .area:hover {
   cursor: pointer;
+  /*font-size: 40px;*/
+  transform: scale(1.07);
+  background-color: #ddd5c4;
 }
 
 @media (max-width: 1100px) {
