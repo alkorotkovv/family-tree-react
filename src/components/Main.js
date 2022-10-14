@@ -17,9 +17,9 @@ function Main(props) {
             id ={element}             
             persons={props.persons} 
             area={props.area} 
-            onAddPersonClick={props.onAddPersonClick} 
-            onCardDeleteClick={props.onCardDeleteClick} 
-            onCheckGen={props.onCheckGen}
+            onAddPersonClick={props.onAddPersonClick}
+            onCardClick={props.onCardClick}
+            onCardDeleteClick={props.onCardDeleteClick}
           />
         )
       }

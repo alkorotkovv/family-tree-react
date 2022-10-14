@@ -4,11 +4,11 @@ import Popup from './Popup';
 function AddPersonPopup(props) {
 
   const [name, setName] = React.useState("Имя Фамилия");
-  const [image, setImage] = React.useState("./images/photo.png");
+  const [image, setImage] = React.useState("../images/photo.png");
   const [place, setPlace] = React.useState("");
   const [birthday, setBirthday] = React.useState("");
   const [about, setAbout] = React.useState("");
-  const [gender, setGender] = React.useState("male");
+  const [gender, setGender] = React.useState("Мужской");
 
   function handleNameChange(evt) {
     setName(evt.target.value);
@@ -45,6 +45,10 @@ function AddPersonPopup(props) {
       about: about
     }
     props.onSubmit(personObject);
+    setName("");
+    setPlace("");
+    setBirthday("");
+    setAbout("");
   }
 
   return (
@@ -59,8 +63,8 @@ function AddPersonPopup(props) {
           <div className="form__genders">
             <label className="form__genderlabel" htmlFor="genders">Пол</label>
             <select className="form__gender" name="genders" id="genders" value={gender} onChange={handleGenderChange}>
-              <option value="male">Мужской</option>
-              <option value="female">Женский</option>
+              <option value="Мужской">Мужской</option>
+              <option value="Женский">Женский</option>
             </select>
           </div>
           <span className="form__input-error input-gender-error"></span>

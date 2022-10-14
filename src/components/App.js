@@ -8,11 +8,13 @@ import CardPopup from './CardPopup';
 
 function App() {
 
-  const [genCount, setGenCount] = React.useState(1);
-  const [isAddPersonPopupVisible, setIsAddPersonPopupVisible] = React.useState(false);
-  const [selectedArea, setSelectedArea] = React.useState(-1);
   const [persons, setPersons] = React.useState([{},{},{},{},{},{},{},{},{},{}]);
-  
+  const [genCount, setGenCount] = React.useState(1);  
+  const [selectedArea, setSelectedArea] = React.useState(-1);
+  const [selectedCard, setSelectedCard] = React.useState({});
+  const [isAddPersonPopupVisible, setIsAddPersonPopupVisible] = React.useState(false);
+  const [isCardPopupVisible, setIsCardPopupVisible] = React.useState(false);
+    
   React.useEffect(() => {
     checkGeneration();
   }, [persons])
@@ -40,6 +42,7 @@ function App() {
 
   function closeAllPopups() {
     setIsAddPersonPopupVisible(false);
+    setIsCardPopupVisible(false);
   }
 
   function handleAddPersonClick(id) {
@@ -51,15 +54,19 @@ function App() {
     let copy = Object.assign([], persons);
     let index = selectedArea;
     copy[index] = personObject;
+    copy[index].area = index;
     setPersons(copy);
     setIsAddPersonPopupVisible(false);
   }
 
-  function handleCardDeleteClick(id) {
-    setSelectedArea(id)
-    console.log("delete")
+  function handleCardClick(card) {
+    setSelectedCard(card);
+    setIsCardPopupVisible(true);
+  }
+
+  function handleCardDeleteClick(card) {
     let copy = Object.assign([], persons);
-    let index = selectedArea;
+    let index = card.area;
     copy[index] = {};
     setPersons(copy);
   }
@@ -72,6 +79,7 @@ function App() {
         persons={persons}
         area={selectedArea}
         onAddPersonClick={handleAddPersonClick} 
+        onCardClick={handleCardClick}
         onCardDeleteClick={handleCardDeleteClick}
       />
       <Footer />
@@ -80,7 +88,11 @@ function App() {
         onClose={closeAllPopups} 
         onSubmit={handleAddPerson}
       />
-      <CardPopup />
+      <CardPopup 
+        isOpen={isCardPopupVisible}
+        onClose={closeAllPopups} 
+        card={selectedCard}
+      />
     </div>
   )
 }
