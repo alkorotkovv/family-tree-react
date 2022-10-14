@@ -8,11 +8,21 @@ function Main(props) {
     sections.push(i)
   }
 
+  //console.log(props.persons)
+
   return (
     <main className="content">
       {
         sections.map(element => 
-          <Generation key={element} id ={element} onAddPersonClick={props.onAddPersonClick} persons={props.persons} area={props.area} />
+          <Generation 
+            key={element} 
+            id ={element}             
+            persons={props.persons} 
+            area={props.area} 
+            onAddPersonClick={props.onAddPersonClick} 
+            onCardDeleteClick={props.onCardDeleteClick} 
+            onCheckGen={props.onCheckGen}
+          />
         )
       }
    </main>

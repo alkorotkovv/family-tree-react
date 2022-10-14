@@ -12,54 +12,75 @@ function App() {
   const [isAddPersonPopupVisible, setIsAddPersonPopupVisible] = React.useState(false);
   const [selectedArea, setSelectedArea] = React.useState(-1);
   const [persons, setPersons] = React.useState([{},{},{},{},{},{},{},{},{},{}]);
+  
+  function checkGeneration(persons) {
+    //console.log(persons)
+    let lastGenPersons = persons.slice((genCount-1)*10, (genCount-1)*10 + 10);
+    let prelastGenPersons = persons.slice((genCount-2)*10, (genCount-2)*10 + 10);
+    console.log(lastGenPersons)
+    console.log(genCount);
+    if ( (lastGenPersons.find((element,index) => Object.entries(element).length !== 0)))
+    {
+      console.log("nado add")
+      setGenCount(genCount+1)
+      let copy = Object.assign([], persons);
+      copy.push({},{},{},{},{},{},{},{},{},{});
+      setPersons(copy);
+    }
+    else if ((genCount >= 2) && 
+             ((prelastGenPersons.findIndex((element,index) => Object.entries(element).length !== 0)) === -1) && 
+             ((lastGenPersons.findIndex((element,index) => Object.entries(element).length !== 0)) === -1))
+    {
+      console.log("nado remove")         
+      let copy = Object.assign([], persons);
+      copy.splice((genCount-1)*10, 10);
+      setPersons(copy);
+      setGenCount(genCount-1)
+    }
+  }
 
   function closeAllPopups() {
     setIsAddPersonPopupVisible(false);
   }
 
   function handleAddPersonClick(id) {
-    console.log(id)
     setSelectedArea(id)
     setIsAddPersonPopupVisible(true);
   }
 
   function handleAddPerson(personObject) {
-    console.log(selectedArea)
     let copy = Object.assign([], persons);
     let index = selectedArea;
     copy[index] = personObject;
-    copy.push({});
-    copy.push({});
-    copy.push({});
-    copy.push({});
-    copy.push({});
-    copy.push({});
-    copy.push({});
-    copy.push({});
-    copy.push({});
-    copy.push({});
     setPersons(copy);
-    console.log(persons);
     setIsAddPersonPopupVisible(false);
+  }
 
-    setGenCount(genCount+1);
-    //setPersons([...persons,{},{}])
+  function handleCardDeleteClick(id) {
+    setSelectedArea(id)
+    console.log("delete")
+    let copy = Object.assign([], persons);
+    let index = selectedArea;
+    copy[index] = {};
+    setPersons(copy);
   }
 
   return (
     <div className="page">
       <Header />
       <Main 
-        genCount={genCount}
-        onAddPersonClick={handleAddPersonClick} 
+        genCount={genCount}        
         persons={persons}
         area={selectedArea}
+        onAddPersonClick={handleAddPersonClick} 
+        onCardDeleteClick={handleCardDeleteClick}
+        onCheckGen={checkGeneration}
       />
       <Footer />
       <AddPersonPopup 
         isOpen={isAddPersonPopupVisible} 
         onClose={closeAllPopups} 
-        onSubmit={handleAddPerson} 
+        onSubmit={handleAddPerson}
       />
       <CardPopup />
     </div>
