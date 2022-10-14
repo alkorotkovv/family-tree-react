@@ -8,8 +8,6 @@ function Main(props) {
     sections.push(i)
   }
 
-  //console.log(props.persons)
-
   return (
     <main className="content">
       {

@@ -13,11 +13,13 @@ function Card(props) {
   let areaId = props.genid * 10 + props.id;
 
   return (
-    <div className="card" draggable="true" id={areaId} onClick={handleCardClick}>
-        <img className="card__image" src={photo} alt="фотография" />
-        <h2 className={`card__title` + (props.gender === "male" ? " card__title_male" :  " card__title_female")}>{props.name}</h2>
-        <button className="card__delete card__delete_visible" type="button" aria-label="Delete" onClick={handleCardDeleteClick} />
-    </div>
+    <li className="card">
+      <div className="card__content" draggable="true" id={areaId} onClick={handleCardClick}>
+          <img className="card__image" src={photo} alt="фотография" />
+          <h2 className={`card__title` + (props.gender === "male" ? " card__title_male" :  " card__title_female")}>{props.name}</h2>        
+      </div>
+      <button className="card__delete card__delete_visible" type="button" aria-label="Delete" onClick={handleCardDeleteClick} />
+    </li>
   )
 }
 

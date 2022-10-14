@@ -13,25 +13,24 @@ function App() {
   const [selectedArea, setSelectedArea] = React.useState(-1);
   const [persons, setPersons] = React.useState([{},{},{},{},{},{},{},{},{},{}]);
   
-  function checkGeneration(persons) {
-    //console.log(persons)
+  React.useEffect(() => {
+    checkGeneration();
+  }, [persons])
+
+  function checkGeneration() {
     let lastGenPersons = persons.slice((genCount-1)*10, (genCount-1)*10 + 10);
     let prelastGenPersons = persons.slice((genCount-2)*10, (genCount-2)*10 + 10);
-    console.log(lastGenPersons)
-    console.log(genCount);
-    if ( (lastGenPersons.find((element,index) => Object.entries(element).length !== 0)))
+    if ((lastGenPersons.find((element) => Object.entries(element).length !== 0)))
     {
-      console.log("nado add")
       setGenCount(genCount+1)
       let copy = Object.assign([], persons);
       copy.push({},{},{},{},{},{},{},{},{},{});
       setPersons(copy);
     }
     else if ((genCount >= 2) && 
-             ((prelastGenPersons.findIndex((element,index) => Object.entries(element).length !== 0)) === -1) && 
-             ((lastGenPersons.findIndex((element,index) => Object.entries(element).length !== 0)) === -1))
-    {
-      console.log("nado remove")         
+             ((prelastGenPersons.findIndex((element) => Object.entries(element).length !== 0)) === -1) && 
+             ((lastGenPersons.findIndex((element) => Object.entries(element).length !== 0)) === -1))
+    {     
       let copy = Object.assign([], persons);
       copy.splice((genCount-1)*10, 10);
       setPersons(copy);
@@ -74,7 +73,6 @@ function App() {
         area={selectedArea}
         onAddPersonClick={handleAddPersonClick} 
         onCardDeleteClick={handleCardDeleteClick}
-        onCheckGen={checkGeneration}
       />
       <Footer />
       <AddPersonPopup 

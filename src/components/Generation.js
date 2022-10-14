@@ -5,10 +5,6 @@ import Card from "./Card.js";
 
 function Generation(props) {
 
-  React.useEffect(() => {
-    props.onCheckGen(props.persons);
-  }, [props.persons])
-
   let areas=[];
   for (let i = 0; i < AreasCount; i++) {
     areas.push(i)
