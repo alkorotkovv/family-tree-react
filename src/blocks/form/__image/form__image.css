@@ -1,0 +1,16 @@
+.form__image {
+  width: 200px;
+  height: 280px;
+  background-color: transparent;
+  background-image: url(../../../images/avatar.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  box-sizing: border-box;
+  border-radius: 10px;
+  border: 2px solid transparent;
+}
+
+.form__image:hover {
+  border: 2px solid black;
+  cursor: pointer;
+}

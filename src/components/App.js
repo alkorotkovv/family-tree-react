@@ -5,6 +5,7 @@ import Main from './Main';
 import Footer from './Footer';
 import AddPersonPopup from './AddPersonPopup';
 import CardPopup from './CardPopup';
+import AddPersonPopupNew from './AddPersonPopupNew';
 
 function App() {
 
@@ -107,7 +108,7 @@ function App() {
         onDrag={handleDrag}
       />
       <Footer />
-      <AddPersonPopup 
+      <AddPersonPopupNew
         isOpen={isAddPersonPopupVisible} 
         onClose={closeAllPopups} 
         onSubmit={handleAddPerson}

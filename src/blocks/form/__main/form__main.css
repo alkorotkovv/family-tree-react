@@ -1,0 +1,6 @@
+.form__main {
+  margin: 0;
+  padding-bottom: 40px;
+  display: flex;
+  gap: 20px;
+}
