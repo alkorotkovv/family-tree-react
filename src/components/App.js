@@ -5,7 +5,7 @@ import Main from './Main';
 import Footer from './Footer';
 import AddPersonPopup from './AddPersonPopup';
 import CardPopup from './CardPopup';
-import AddPersonPopupNew from './AddPersonPopupNew';
+import AddPersonPopupNew from './AddPersonPopup';
 
 function App() {
 
@@ -73,6 +73,12 @@ function App() {
     setPersons(copy);
   }
 
+  function handleCardEditClick(card) {
+    console.log(card);
+    setIsCardPopupVisible(false);
+    setIsAddPersonPopupVisible(true);
+  }
+
   function handleDrag(card) {
     setSelectedCard(card)
   }
@@ -108,7 +114,7 @@ function App() {
         onDrag={handleDrag}
       />
       <Footer />
-      <AddPersonPopupNew
+      <AddPersonPopup
         isOpen={isAddPersonPopupVisible} 
         onClose={closeAllPopups} 
         onSubmit={handleAddPerson}
@@ -118,6 +124,7 @@ function App() {
         isOpen={isCardPopupVisible}
         onClose={closeAllPopups} 
         card={selectedCard}
+        onCardEditClick={handleCardEditClick}
       />
     </div>
   )

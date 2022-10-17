@@ -44,6 +44,7 @@
 
 
 @import url(./blocks/card-scale/card-scale.css);
+@import url(./blocks/card-scale/__main/card-scale__main.css);
 @import url(./blocks/card-scale/__image/card-scale__image.css);
 @import url(./blocks/card-scale/__information/card-scale__information.css);
 @import url(./blocks/card-scale/__title/card-scale__title.css);

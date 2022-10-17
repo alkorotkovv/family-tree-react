@@ -1,4 +1,5 @@
 .card-scale__title {
+  text-align: start;
   margin: 0;
   padding: 10px 0 10px 0;
   font-weight: 900;
