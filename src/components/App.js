@@ -15,6 +15,7 @@ function App() {
   const [selectedCard, setSelectedCard] = React.useState({name:"", image:{file:"", imageUrl:""}, place:"", gender:"", birthday:"", about:""});
   const [isAddPersonPopupVisible, setIsAddPersonPopupVisible] = React.useState(false);
   const [isCardPopupVisible, setIsCardPopupVisible] = React.useState(false);
+  const [editCard, setEditCard] = React.useState({name:"", image:{file:"", imageUrl:""}, place:"", gender:"", birthday:"", about:""});
     
   React.useEffect(() => {
     checkGeneration();
@@ -44,7 +45,8 @@ function App() {
   function closeAllPopups() {
     setIsAddPersonPopupVisible(false);
     setIsCardPopupVisible(false);
-    setSelectedArea(-1)
+    //setSelectedArea(-1);
+    setSelectedCard({name:"", image:{file:"", imageUrl:""}, place:"", gender:"", birthday:"", about:""})
   }
 
   function handleAddPersonClick(id) {
@@ -53,15 +55,22 @@ function App() {
   }
 
   function handleAddPerson(personObject) {
+    console.log("объект добавляемого перса")
+    console.log(personObject)
     let copy = Object.assign([], persons);
     let index = selectedArea;
     copy[index] = personObject;
-    copy[index].area = index;    
+    copy[index].area = index;
+    console.log("добавляемый перс")
+    console.log(copy[index])    
     setPersons(copy);
     setIsAddPersonPopupVisible(false);
   }
 
   function handleCardClick(card) {
+    console.log("когда кликаем на карту")
+    setSelectedArea(card.area);
+    console.log(card)
     setSelectedCard(card);
     setIsCardPopupVisible(true);
   }
@@ -74,7 +83,9 @@ function App() {
   }
 
   function handleCardEditClick(card) {
-    console.log(card);
+    console.log("когда кликаем на редактировать")
+    console.log(card)
+    setEditCard(card);
     setIsCardPopupVisible(false);
     setIsAddPersonPopupVisible(true);
   }
@@ -98,6 +109,7 @@ function App() {
     copy[toindex] = newCard;
     copy[fromindex] = {};
     setPersons(copy);
+    setSelectedCard({name:"", image:{file:"", imageUrl:""}, place:"", gender:"", birthday:"", about:""})
   }
 
   return (
@@ -118,7 +130,7 @@ function App() {
         isOpen={isAddPersonPopupVisible} 
         onClose={closeAllPopups} 
         onSubmit={handleAddPerson}
-        
+        card={selectedCard}
       />
       <CardPopup 
         isOpen={isCardPopupVisible}

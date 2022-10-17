@@ -4,7 +4,9 @@ import photo from '../images/photo.png';
 function CardPopup(props) {
 
   function handleClick() {
-    props.onCardEditClick(props.card)
+    const editsCard = {};
+    Object.assign(editsCard, props.card);
+    props.onCardEditClick(editsCard)
   }
 
   return (

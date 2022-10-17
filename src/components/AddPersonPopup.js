@@ -5,12 +5,22 @@ import photo from '../images/avatar.png';
 
 function AddPersonPopup(props) {
 
-  const [name, setName] = React.useState("Имя Фамилия");
+  console.log(props.card);
+
+  const [name, setName] = React.useState("");
   const [image, setImage] = React.useState({file: "", imageUrl: photo});
   const [place, setPlace] = React.useState("");
   const [birthday, setBirthday] = React.useState("");
   const [about, setAbout] = React.useState("");
   const [gender, setGender] = React.useState("Мужской");
+
+  React.useEffect(() => {
+    setName(props.card.name);
+    setImage({file: "", imageUrl: photo});
+    setPlace(props.card.place);
+    setBirthday(props.card.birthday);
+    setAbout(props.card.about);
+  }, [props.card])
 
   function handleNameChange(evt) {
     setName(evt.target.value);
@@ -47,30 +57,34 @@ function AddPersonPopup(props) {
   }
 
   function handleClose() {
-    props.onClose();
+    props.onClose();  
+    /* 
     setName("");
     setPlace("");
     setBirthday("");
     setAbout("");
-    setImage({file: "", imageUrl: photo})    
+    setImage({file: "", imageUrl: photo})
+    */
   }
 
   function handleSubmit(evt) {
     evt.preventDefault();
     const personObject = {
       name: name,
-      image: image,
+      image: {file: image.file, imageUrl: image.imageUrl},
       place: place,
       gender: gender,
       birthday: birthday,
       about: about
     }
-    props.onSubmit(personObject);
+    props.onSubmit(personObject);    
+    /*
     setName("");
     setPlace("");
     setBirthday("");
     setAbout("");
-    setImage({file: "", imageUrl: photo})
+    setImage({file: "", imageUrl: photo})   
+    */ 
   }
 
   return (
