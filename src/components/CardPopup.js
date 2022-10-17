@@ -3,10 +3,12 @@ import photo from '../images/photo.png';
 
 function CardPopup(props) {
 
+  console.log(props)
+
   return (
     <Popup isOpen={props.isOpen} onClose={props.onClose}>
         <div className="card-scale">
-          <img className="card-scale__image" src={photo} alt="попап фотография" />
+          <img className="card-scale__image" src={props.card.image.imageUrl} alt="попап фотография" />
           <div className="card-scale__information">
             <h2 className="card-scale__title">{props.card.name}</h2>
             <div className="card-scale__line-block">

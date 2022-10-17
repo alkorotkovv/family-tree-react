@@ -20,13 +20,14 @@ function AddPersonPopupNew(props) {
     evt.preventDefault();
     let reader = new FileReader();
     let file = evt.target.files[0];
+    reader.readAsDataURL(file);
     reader.onloadend = () => {
       setImage({
         file: file,
         imageUrl: reader.result
       });
     }
-    reader.readAsDataURL(file);
+    
   }
   
   function handlePlaceChange(evt) {

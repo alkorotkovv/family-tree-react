@@ -12,7 +12,7 @@ function App() {
   const [persons, setPersons] = React.useState([{},{},{},{},{},{},{},{},{},{}]);
   const [genCount, setGenCount] = React.useState(1);  
   const [selectedArea, setSelectedArea] = React.useState(-1);
-  const [selectedCard, setSelectedCard] = React.useState({});
+  const [selectedCard, setSelectedCard] = React.useState({name:"", image:{file:"", imageUrl:""}, place:"", gender:"", birthday:"", about:""});
   const [isAddPersonPopupVisible, setIsAddPersonPopupVisible] = React.useState(false);
   const [isCardPopupVisible, setIsCardPopupVisible] = React.useState(false);
     
