@@ -1,0 +1,11 @@
+.form__avatar {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  width: 196px;
+  height: 276px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  object-fit: cover;
+}
+

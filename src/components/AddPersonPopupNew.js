@@ -1,10 +1,12 @@
 import React from 'react';
+import Avatar from './Avatar';
 import Popup from './Popup';
+import photo from '../images/avatar.png';
 
 function AddPersonPopupNew(props) {
 
   const [name, setName] = React.useState("Имя Фамилия");
-  const [image, setImage] = React.useState("../images/photo.png");
+  const [image, setImage] = React.useState({file: "", imageUrl: photo});
   const [place, setPlace] = React.useState("");
   const [birthday, setBirthday] = React.useState("");
   const [about, setAbout] = React.useState("");
@@ -15,9 +17,18 @@ function AddPersonPopupNew(props) {
   }
 
   function handleImageChange(evt) {
-    setImage(evt.target.value);
+    evt.preventDefault();
+    let reader = new FileReader();
+    let file = evt.target.files[0];
+    reader.onloadend = () => {
+      setImage({
+        file: file,
+        imageUrl: reader.result
+      });
+    }
+    reader.readAsDataURL(file);
   }
-
+  
   function handlePlaceChange(evt) {
     setPlace(evt.target.value);
   }
@@ -32,6 +43,15 @@ function AddPersonPopupNew(props) {
 
   function handleGenderChange(evt) {
     setGender(evt.target.value);
+  }
+
+  function handleClose() {
+    props.onClose();
+    setName("");
+    setPlace("");
+    setBirthday("");
+    setAbout("");
+    setImage({file: "", imageUrl: photo})    
   }
 
   function handleSubmit(evt) {
@@ -49,15 +69,17 @@ function AddPersonPopupNew(props) {
     setPlace("");
     setBirthday("");
     setAbout("");
+    setImage({file: "", imageUrl: photo})
   }
 
   return (
-    <Popup isOpen={props.isOpen} onClose={props.onClose}>
+    <Popup isOpen={props.isOpen} onClose={handleClose}>
       <form className="form form_card_add" name="form_card_add" noValidate>
         <h2 className="form__title">Добавление члена семьи</h2>
         <div className="form__main">
-          <div className="form__image">
-
+          <div className="form__image" >
+            <input className="form__input_content_file" id="file-input" type="file" name="file" onChange={handleImageChange} />
+            <Avatar imageUrl={image.imageUrl} />
           </div>
             <fieldset className="form__info">
               <label className="form__field">

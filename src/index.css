@@ -65,3 +65,6 @@
 @import url(./blocks/form/__image/form__image.css);
 @import url(./blocks/form/__main/form__main.css);
 @import url(./blocks/form/__inputs/form__inputs.css);
+@import url(./blocks/form/__input/_content/form__input_content_file.css);
+@import url(./blocks/form/__label/form__label.css);
+@import url(./blocks/form/__avatar/form__avatar.css);
