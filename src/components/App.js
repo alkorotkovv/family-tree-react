@@ -11,6 +11,7 @@ import AckPopup from './AckPopup';
 import Register from './Register';
 import Login from './Login';
 import ProtectedRoute from './ProtectedRoute';
+import InfoTooltip from './InfoTooltip';
 
 function App() {
 
@@ -22,6 +23,8 @@ function App() {
   const [isCardPopupVisible, setIsCardPopupVisible] = React.useState(false);
   const [isAckPopupVisible, setIsAckPopupVisible] = React.useState(false);
   const [loggedIn, setLoggedIn] = React.useState(false);
+  const [tooltip, setTooltipText] = React.useState({text:"текст ошибки", isAnswerGood: false});
+  const [isInfoTooltipPopupOpen, setIsInfoTooltipPopupOpen] = React.useState(false);
   const history = useHistory();
     
   React.useEffect(() => {
@@ -55,11 +58,16 @@ function App() {
     setSelectedCard({name:"", image:{file:"", imageUrl:photo}, gender:"Мужской", place:"", birthday:"", about:""});
   }
 
+  function handleTooltipDisplay(text, isAnswerGood) {
+    setTooltipText({text: text, isAnswerGood: isAnswerGood});
+  }
+
   //Функция закрытия всех попапов
   function closeAllPopups() {
     setIsAddPersonPopupVisible(false);
     setIsCardPopupVisible(false);
     setIsAckPopupVisible(false);
+    setIsInfoTooltipPopupOpen(false);
     setTimeout(setDefaultSelectedCard, 300);
   }
 
@@ -138,6 +146,21 @@ function App() {
     setDefaultSelectedCard();
   }
 
+  //Обработчик сабмита формы входа
+  function handleLoginSubmit(email, password) {
+    if ((email==="1") && (password==="1")) {
+      //localStorage.setItem('token', res.token);
+      //setEmail(email);
+      setLoggedIn(true);
+      history.push("/");
+    }
+    else {
+      console.log("fhjhfhfhjf")
+      handleTooltipDisplay("Введенные данные некорректны", false);
+      setIsInfoTooltipPopupOpen(true);
+    }
+  }  
+
   //Обработчик выхода из аккаунта
   function handleExitSubmit() {
     //localStorage.removeItem('token');
@@ -150,7 +173,7 @@ function App() {
       <Header onExit={handleExitSubmit} />
       <Switch>
         <Route path="/sign-in">
-          <Login  />
+          <Login onLogin={handleLoginSubmit} />
         </Route>
         <Route path="/sign-up">
           <Register  />
@@ -199,6 +222,7 @@ function App() {
         card={selectedCard}
         onCardDeleteClick={handleCardDeleteClick}
       />
+      <InfoTooltip isOpen={isInfoTooltipPopupOpen} onClose={closeAllPopups} isAnswerGood={tooltip.isAnswerGood} title={tooltip.text} />
     </div>
   )
 }

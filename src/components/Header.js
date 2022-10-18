@@ -24,10 +24,7 @@ function Header(props) {
       break;
     case "/":
       block = (
-        <>
-          <p className="header__email">{props.email}</p>
-          <button className="header__button" onClick={handleClick}>Выйти</button>
-        </>
+        <button className="header__button" onClick={handleClick}>Выйти</button>
       )
       break;
   }

@@ -7,7 +7,7 @@ import { BrowserRouter } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <BrowserRouter basename='/react-mesto-auth'>
+  <BrowserRouter basename='/family-tree-react'>
   <React.StrictMode>
     <App />
   </React.StrictMode>
