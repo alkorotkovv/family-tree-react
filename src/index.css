@@ -41,6 +41,7 @@
 @import url(./blocks/form/__genders/form__genders.css);
 @import url(./blocks/form/__gender/form__gender.css);
 @import url(./blocks/form/__genderlabel/form__genderlabel.css);
+@import url(./blocks/form/__question/form__question.css);
 
 
 @import url(./blocks/card-scale/card-scale.css);
@@ -74,3 +75,6 @@
 @import url(./blocks/form/__avatar/form__avatar.css);
 @import url(./blocks/form/__buttons/form__buttons.css);
 @import url(./blocks/form/_type/form_type_delete.css);
+@import url(./blocks/form/_type/form_type_login.css);
+
+@import url(./blocks/form/__save-button/_type/form__save-button_type_login.css);

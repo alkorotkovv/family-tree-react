@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Route, Switch, useHistory } from 'react-router-dom';
 import photo from '../images/avatar.png';
 import {Me} from '../utils/constants';
 import Header from './Header';
@@ -8,6 +8,9 @@ import Footer from './Footer';
 import AddPersonPopup from './AddPersonPopup';
 import CardPopup from './CardPopup';
 import AckPopup from './AckPopup';
+import Register from './Register';
+import Login from './Login';
+import ProtectedRoute from './ProtectedRoute';
 
 function App() {
 
@@ -18,6 +21,8 @@ function App() {
   const [isAddPersonPopupVisible, setIsAddPersonPopupVisible] = React.useState(false);
   const [isCardPopupVisible, setIsCardPopupVisible] = React.useState(false);
   const [isAckPopupVisible, setIsAckPopupVisible] = React.useState(false);
+  const [loggedIn, setLoggedIn] = React.useState(false);
+  const history = useHistory();
     
   React.useEffect(() => {
     checkGeneration();
@@ -133,19 +138,47 @@ function App() {
     setDefaultSelectedCard();
   }
 
+  //Обработчик выхода из аккаунта
+  function handleExitSubmit() {
+    //localStorage.removeItem('token');
+    setLoggedIn(false);
+    history.push("/sign-in");
+  }
+
   return (
     <div className="page">
-      <Header />
-      <Main 
-        genCount={genCount}        
-        persons={persons}
-        area={selectedArea}
-        onAddPersonClick={handleAddPersonClick} 
-        onCardClick={handleCardClick}
-        onCardDeleteClick={handleDeletePopupClick}
-        onDrop={handleDrop}
-        onDrag={handleDrag}
-      />
+      <Header onExit={handleExitSubmit} />
+      <Switch>
+        <Route path="/sign-in">
+          <Login  />
+        </Route>
+        <Route path="/sign-up">
+          <Register  />
+        </Route>
+        <ProtectedRoute
+            path="/"
+            loggedIn={loggedIn}
+            genCount={genCount}        
+            persons={persons}
+            area={selectedArea}
+            onAddPersonClick={handleAddPersonClick} 
+            onCardClick={handleCardClick}
+            onCardDeleteClick={handleDeletePopupClick}
+            onDrop={handleDrop}
+            onDrag={handleDrag}
+            component={Main}
+          />
+        <Main 
+          genCount={genCount}        
+          persons={persons}
+          area={selectedArea}
+          onAddPersonClick={handleAddPersonClick} 
+          onCardClick={handleCardClick}
+          onCardDeleteClick={handleDeletePopupClick}
+          onDrop={handleDrop}
+          onDrag={handleDrag}
+        />        
+      </Switch>
       <Footer />
       <AddPersonPopup
         isOpen={isAddPersonPopupVisible} 
