@@ -5,17 +5,16 @@ import Main from './Main';
 import Footer from './Footer';
 import AddPersonPopup from './AddPersonPopup';
 import CardPopup from './CardPopup';
-import AddPersonPopupNew from './AddPersonPopup';
+import photo from '../images/avatar.png';
 
 function App() {
 
   const [persons, setPersons] = React.useState([{},{},{},{},{},{},{},{},{},{}]);
   const [genCount, setGenCount] = React.useState(1);  
   const [selectedArea, setSelectedArea] = React.useState(-1);
-  const [selectedCard, setSelectedCard] = React.useState({name:"", image:{file:"", imageUrl:""}, place:"", gender:"", birthday:"", about:""});
+  const [selectedCard, setSelectedCard] = React.useState({name:"", image:{file:"", imageUrl:photo}, place:"", gender:"", birthday:"", about:""});
   const [isAddPersonPopupVisible, setIsAddPersonPopupVisible] = React.useState(false);
   const [isCardPopupVisible, setIsCardPopupVisible] = React.useState(false);
-  const [editCard, setEditCard] = React.useState({name:"", image:{file:"", imageUrl:""}, place:"", gender:"", birthday:"", about:""});
     
   React.useEffect(() => {
     checkGeneration();
@@ -46,7 +45,7 @@ function App() {
     setIsAddPersonPopupVisible(false);
     setIsCardPopupVisible(false);
     //setSelectedArea(-1);
-    setSelectedCard({name:"", image:{file:"", imageUrl:""}, place:"", gender:"", birthday:"", about:""})
+    setSelectedCard({name:"", image:{file:"", imageUrl:photo}, place:"", gender:"", birthday:"", about:""})
   }
 
   function handleAddPersonClick(id) {
@@ -85,7 +84,6 @@ function App() {
   function handleCardEditClick(card) {
     console.log("когда кликаем на редактировать")
     console.log(card)
-    setEditCard(card);
     setIsCardPopupVisible(false);
     setIsAddPersonPopupVisible(true);
   }
@@ -109,7 +107,7 @@ function App() {
     copy[toindex] = newCard;
     copy[fromindex] = {};
     setPersons(copy);
-    setSelectedCard({name:"", image:{file:"", imageUrl:""}, place:"", gender:"", birthday:"", about:""})
+    setSelectedCard({name:"", image:{file:"", imageUrl:photo}, place:"", gender:"", birthday:"", about:""})
   }
 
   return (

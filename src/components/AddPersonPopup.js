@@ -16,7 +16,7 @@ function AddPersonPopup(props) {
 
   React.useEffect(() => {
     setName(props.card.name);
-    setImage({file: "", imageUrl: photo});
+    setImage({file: props.card.image.file, imageUrl: props.card.image.imageUrl});
     setPlace(props.card.place);
     setBirthday(props.card.birthday);
     setAbout(props.card.about);

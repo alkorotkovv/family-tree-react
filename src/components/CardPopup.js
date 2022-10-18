@@ -31,7 +31,10 @@ function CardPopup(props) {
               <p className="card-scale__line-block-text card-scale__about">{props.card.about}</p>
             </div>
           </div>
-          <button className="form__save-button" type="submit" onClick={handleClick} >Редактировать</button>
+          <div className="form__buttons">
+            <button className="form__save-button" type="submit" onClick={handleClick} >Редактировать</button>
+            <button className="form__save-button" type="submit" onClick={handleClick} >Удалить</button>
+          </div>
         </div>
       </Popup>
   )
