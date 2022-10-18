@@ -5,7 +5,7 @@ import photo from '../images/avatar.png';
 
 function AddPersonPopup(props) {
 
-  console.log(props.card);
+  //console.log(props.card);
 
   const [name, setName] = React.useState("");
   const [image, setImage] = React.useState({file: "", imageUrl: photo});

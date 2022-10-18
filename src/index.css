@@ -73,3 +73,4 @@
 @import url(./blocks/form/__label/form__label.css);
 @import url(./blocks/form/__avatar/form__avatar.css);
 @import url(./blocks/form/__buttons/form__buttons.css);
+@import url(./blocks/form/_type/form_type_delete.css);

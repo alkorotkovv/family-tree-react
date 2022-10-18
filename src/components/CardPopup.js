@@ -3,10 +3,14 @@ import photo from '../images/photo.png';
 
 function CardPopup(props) {
 
-  function handleClick() {
-    const editsCard = {};
-    Object.assign(editsCard, props.card);
-    props.onCardEditClick(editsCard)
+  function handleEditClick() {
+    //const editsCard = {};
+    //Object.assign(editsCard, props.card);
+    props.onCardEditClick(props.card)
+  }
+
+  function handleDeleteClick() {
+    props.onCardDeleteClick(props.card)
   }
 
   return (
@@ -32,8 +36,8 @@ function CardPopup(props) {
             </div>
           </div>
           <div className="form__buttons">
-            <button className="form__save-button" type="submit" onClick={handleClick} >Редактировать</button>
-            <button className="form__save-button" type="submit" onClick={handleClick} >Удалить</button>
+            <button className="form__save-button" type="submit" onClick={handleEditClick} >Редактировать</button>
+            <button className="form__save-button" type="submit" onClick={handleDeleteClick} >Удалить</button>
           </div>
         </div>
       </Popup>

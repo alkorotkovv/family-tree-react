@@ -7,6 +7,7 @@ import AddPersonPopup from './AddPersonPopup';
 import CardPopup from './CardPopup';
 import photo from '../images/avatar.png';
 import mee from '../images/me.jpg';
+import AckPopup from './AckPopup';
 
 function App() {
 
@@ -26,6 +27,7 @@ function App() {
   const [selectedCard, setSelectedCard] = React.useState({name:"", image:{file:"", imageUrl:photo}, place:"", gender:"", birthday:"", about:""});
   const [isAddPersonPopupVisible, setIsAddPersonPopupVisible] = React.useState(false);
   const [isCardPopupVisible, setIsCardPopupVisible] = React.useState(false);
+  const [isAckPopupVisible, setIsAckPopupVisible] = React.useState(false);
     
   React.useEffect(() => {
     checkGeneration();
@@ -55,6 +57,7 @@ function App() {
   function closeAllPopups() {
     setIsAddPersonPopupVisible(false);
     setIsCardPopupVisible(false);
+    setIsAckPopupVisible(false);
     //setSelectedArea(-1);
     setSelectedCard({name:"", image:{file:"", imageUrl:photo}, place:"", gender:"", birthday:"", about:""})
   }
@@ -65,38 +68,50 @@ function App() {
   }
 
   function handleAddPerson(personObject) {
-    console.log("объект добавляемого перса")
-    console.log(personObject)
+    //console.log("объект добавляемого перса")
+    //onsole.log(personObject)
     let copy = Object.assign([], persons);
     let index = selectedArea;
     copy[index] = personObject;
     copy[index].area = index;
-    console.log("добавляемый перс")
-    console.log(copy[index])    
+    //console.log("добавляемый перс")
+    //console.log(copy[index])    
     setPersons(copy);
     setIsAddPersonPopupVisible(false);
   }
 
   function handleCardClick(card) {
-    console.log("когда кликаем на карту")
-    setSelectedArea(card.area);
-    console.log(card)
+    //console.log("когда кликаем на карту")
+    //console.log(card)
+    setSelectedArea(card.area);    
     setSelectedCard(card);
     setIsCardPopupVisible(true);
   }
 
   function handleCardDeleteClick(card) {
+    console.log("Подтвердили удалить")
+    console.log(card);
     let copy = Object.assign([], persons);
     let index = card.area;
     copy[index] = {};
     setPersons(copy);
+    setIsAckPopupVisible(false);
+    setSelectedCard({name:"", image:{file:"", imageUrl:photo}, place:"", gender:"", birthday:"", about:""})
   }
 
   function handleCardEditClick(card) {
-    console.log("когда кликаем на редактировать")
-    console.log(card)
+    //console.log("когда кликаем на редактировать")
+    //console.log(card)
     setIsCardPopupVisible(false);
     setIsAddPersonPopupVisible(true);
+  }
+
+  function handleDeletePopupClick(card) {
+    console.log("кликнули на удалить")
+    console.log(card)
+    setSelectedCard(card);
+    setIsCardPopupVisible(false);
+    setIsAckPopupVisible(true);
   }
 
   function handleDrag(card) {
@@ -118,6 +133,7 @@ function App() {
     copy[toindex] = newCard;
     copy[fromindex] = {};
     setPersons(copy);
+    //Устанавливаем карточку по дефолту
     setSelectedCard({name:"", image:{file:"", imageUrl:photo}, place:"", gender:"", birthday:"", about:""})
   }
 
@@ -130,7 +146,7 @@ function App() {
         area={selectedArea}
         onAddPersonClick={handleAddPersonClick} 
         onCardClick={handleCardClick}
-        onCardDeleteClick={handleCardDeleteClick}
+        onCardDeleteClick={handleDeletePopupClick}
         onDrop={handleDrop}
         onDrag={handleDrag}
       />
@@ -146,6 +162,13 @@ function App() {
         onClose={closeAllPopups} 
         card={selectedCard}
         onCardEditClick={handleCardEditClick}
+        onCardDeleteClick={handleDeletePopupClick}
+      />
+      <AckPopup 
+        isOpen={isAckPopupVisible}
+        onClose={closeAllPopups}
+        card={selectedCard}
+        onCardDeleteClick={handleCardDeleteClick}
       />
     </div>
   )
