@@ -4,19 +4,24 @@
   margin: 0;
   padding: 0;
   background: none;
-  background-image: url(../../../images/close.svg);
+  background-position: center;
+  background-image: url(../../../images/closeBlack.svg);
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 16px 16px;
   border: none;
   position: absolute;
   top: -40px;
   right: -40px;
   transition: opacity 0.2s linear;
+  background-color: antiquewhite;
+  border-radius: 50%;
 }
 
 .popup__close-button:hover {
-  opacity: 0.6;
+  /*opacity: 0.6;*/
   cursor: pointer;
+  background-color: #696355;
+  background-image: url(../../../images/closeWhite.svg);
 }
 
 @media (max-width: 600px) {
