@@ -18,7 +18,7 @@ function AddPerson(props) {
   }
 
   return (
-    <div className="area" onClick={handleClick} onDragOver={handleDragOver} onDrop={handleDrop} id={areaId}>
+    <div className="area" onClick={handleClick} onDragOver={handleDragOver} onDrop={handleDrop} id={areaId} title="Добавить человека">
       <p>+</p>
     </div>
   )
