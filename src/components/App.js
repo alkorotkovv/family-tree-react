@@ -6,10 +6,21 @@ import Footer from './Footer';
 import AddPersonPopup from './AddPersonPopup';
 import CardPopup from './CardPopup';
 import photo from '../images/avatar.png';
+import mee from '../images/me.jpg';
 
 function App() {
 
-  const [persons, setPersons] = React.useState([{},{},{},{},{},{},{},{},{},{}]);
+  let me = {
+    area: 0,
+    name:"Коротков Александр Андреевич", 
+    image:{file:"", imageUrl: mee}, 
+    place:"Нижний Новгород", 
+    gender:"Мужской", 
+    birthday:"12.03.1995", 
+    about:"Родился в Нижнем Новгороде, с 6 лет учился в школе номер 82 (лицей), потом поступил в ННГУ им Лобачевского. Отучился там 6 лет, получил степень магистра математики. Потом пошелна работу в ООО Синтек где работаю 4 с половиной года. Занимаемся автоматизаией технологических процессов."
+  }
+
+  const [persons, setPersons] = React.useState([me,{},{},{},{},{},{},{},{},{}]);
   const [genCount, setGenCount] = React.useState(1);  
   const [selectedArea, setSelectedArea] = React.useState(-1);
   const [selectedCard, setSelectedCard] = React.useState({name:"", image:{file:"", imageUrl:photo}, place:"", gender:"", birthday:"", about:""});
