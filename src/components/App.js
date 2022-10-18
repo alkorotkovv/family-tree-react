@@ -77,29 +77,21 @@ function App() {
   }
 
   function handleAddPerson(personObject) {
-    //console.log("объект добавляемого перса")
-    //onsole.log(personObject)
     let copy = Object.assign([], persons);
     let index = selectedArea;
     copy[index] = personObject;
     copy[index].area = index;
-    //console.log("добавляемый перс")
-    //console.log(copy[index])    
     setPersons(copy);
     setIsAddPersonPopupVisible(false);
   }
 
   function handleCardClick(card) {
-    //console.log("когда кликаем на карту")
-    //console.log(card)
     setSelectedArea(card.area);    
     setSelectedCard(card);
     setIsCardPopupVisible(true);
   }
 
   function handleCardDeleteClick(card) {
-    console.log("Подтвердили удалить")
-    console.log(card);
     let copy = Object.assign([], persons);
     let index = card.area;
     copy[index] = {};
@@ -108,16 +100,12 @@ function App() {
     setDefaultSelectedCard();
   }
 
-  function handleCardEditClick(card) {
-    //console.log("когда кликаем на редактировать")
-    //console.log(card)
+  function handleCardEditClick() {
     setIsCardPopupVisible(false);
     setIsAddPersonPopupVisible(true);
   }
 
   function handleDeletePopupClick(card) {
-    console.log("кликнули на удалить")
-    console.log(card)
     setSelectedCard(card);
     setIsCardPopupVisible(false);
     setIsAckPopupVisible(true);
@@ -155,7 +143,6 @@ function App() {
       history.push("/");
     }
     else {
-      console.log("fhjhfhfhjf")
       handleTooltipDisplay("Введенные данные некорректны", false);
       setIsInfoTooltipPopupOpen(true);
     }
