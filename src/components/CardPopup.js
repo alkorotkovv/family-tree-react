@@ -1,11 +1,8 @@
 import Popup from './Popup';
-import photo from '../images/photo.png';
 
 function CardPopup(props) {
 
   function handleEditClick() {
-    //const editsCard = {};
-    //Object.assign(editsCard, props.card);
     props.onCardEditClick(props.card)
   }
 

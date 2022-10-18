@@ -9,15 +9,16 @@ function AddPersonPopup(props) {
 
   const [name, setName] = React.useState("");
   const [image, setImage] = React.useState({file: "", imageUrl: photo});
+  const [gender, setGender] = React.useState("Мужской");
   const [place, setPlace] = React.useState("");
   const [birthday, setBirthday] = React.useState("");
   const [about, setAbout] = React.useState("");
-  const [gender, setGender] = React.useState("Мужской");
-
+  
   React.useEffect(() => {
     setName(props.card.name);
     setImage({file: props.card.image.file, imageUrl: props.card.image.imageUrl});
-    setPlace(props.card.place);
+    setGender(props.card.gender);
+    setPlace(props.card.place);    
     setBirthday(props.card.birthday);
     setAbout(props.card.about);
   }, [props.card])
@@ -57,14 +58,7 @@ function AddPersonPopup(props) {
   }
 
   function handleClose() {
-    props.onClose();  
-    /* 
-    setName("");
-    setPlace("");
-    setBirthday("");
-    setAbout("");
-    setImage({file: "", imageUrl: photo})
-    */
+    props.onClose(); 
   }
 
   function handleSubmit(evt) {
@@ -77,20 +71,13 @@ function AddPersonPopup(props) {
       birthday: birthday,
       about: about
     }
-    props.onSubmit(personObject);    
-    /*
-    setName("");
-    setPlace("");
-    setBirthday("");
-    setAbout("");
-    setImage({file: "", imageUrl: photo})   
-    */ 
+    props.onSubmit(personObject);  
   }
 
   return (
     <Popup isOpen={props.isOpen} onClose={handleClose}>
-      <form className="form form_card_add" name="form_card_add" noValidate>
-        <h2 className="form__title">Добавление члена семьи</h2>
+      <form className="form form_card_add" name="form_card_add" >
+        <h2 className="form__title">Информация о человеке</h2>
         <div className="form__main">
           <div className="form__image" >
             <input className="form__input_content_file" id="file-input" type="file" name="file" onChange={handleImageChange} />
@@ -124,7 +111,7 @@ function AddPersonPopup(props) {
               </label>
             </fieldset>
         </div>
-        <button className="form__save-button" type="submit" onClick={handleSubmit} >Добавить</button>
+        <button className="form__save-button" type="submit" onClick={handleSubmit} >Сохранить</button>
       </form>
     </Popup>
   )

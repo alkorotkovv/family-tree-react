@@ -1,38 +1,29 @@
 import React from 'react';
 
+import photo from '../images/avatar.png';
+import {Me} from '../utils/constants';
 import Header from './Header';
 import Main from './Main';
 import Footer from './Footer';
 import AddPersonPopup from './AddPersonPopup';
 import CardPopup from './CardPopup';
-import photo from '../images/avatar.png';
-import mee from '../images/me.jpg';
 import AckPopup from './AckPopup';
 
 function App() {
 
-  let me = {
-    area: 0,
-    name:"Коротков Александр Андреевич", 
-    image:{file:"", imageUrl: mee}, 
-    place:"Нижний Новгород", 
-    gender:"Мужской", 
-    birthday:"12.03.1995", 
-    about:"Родился в Нижнем Новгороде, с 6 лет учился в школе номер 82 (лицей), потом поступил в ННГУ им Лобачевского. Отучился там 6 лет, получил степень магистра математики. Потом пошелна работу в ООО Синтек где работаю 4 с половиной года. Занимаемся автоматизаией технологических процессов."
-  }
-
-  const [persons, setPersons] = React.useState([me,{},{},{},{},{},{},{},{},{}]);
+  const [persons, setPersons] = React.useState([Me,{},{},{},{},{},{},{},{},{}]);
   const [genCount, setGenCount] = React.useState(1);  
   const [selectedArea, setSelectedArea] = React.useState(-1);
-  const [selectedCard, setSelectedCard] = React.useState({name:"", image:{file:"", imageUrl:photo}, place:"", gender:"", birthday:"", about:""});
+  const [selectedCard, setSelectedCard] = React.useState({name:"", image:{file:"", imageUrl:photo}, gender:"Мужской", place:"", birthday:"", about:""});
   const [isAddPersonPopupVisible, setIsAddPersonPopupVisible] = React.useState(false);
   const [isCardPopupVisible, setIsCardPopupVisible] = React.useState(false);
   const [isAckPopupVisible, setIsAckPopupVisible] = React.useState(false);
     
   React.useEffect(() => {
     checkGeneration();
-  }, [persons])
+  }, [persons]);
 
+  //Функция для проверки создания нового поколения
   function checkGeneration() {
     let lastGenPersons = persons.slice((genCount-1)*10, (genCount-1)*10 + 10);
     let prelastGenPersons = persons.slice((genCount-2)*10, (genCount-2)*10 + 10);
@@ -54,12 +45,17 @@ function App() {
     }
   }
 
+  //Функция задающая дефолтную карточку
+  function setDefaultSelectedCard() {
+    setSelectedCard({name:"", image:{file:"", imageUrl:photo}, gender:"Мужской", place:"", birthday:"", about:""});
+  }
+
+  //Функция закрытия всех попапов
   function closeAllPopups() {
     setIsAddPersonPopupVisible(false);
     setIsCardPopupVisible(false);
     setIsAckPopupVisible(false);
-    //setSelectedArea(-1);
-    setSelectedCard({name:"", image:{file:"", imageUrl:photo}, place:"", gender:"", birthday:"", about:""})
+    setTimeout(setDefaultSelectedCard, 300);
   }
 
   function handleAddPersonClick(id) {
@@ -96,7 +92,7 @@ function App() {
     copy[index] = {};
     setPersons(copy);
     setIsAckPopupVisible(false);
-    setSelectedCard({name:"", image:{file:"", imageUrl:photo}, place:"", gender:"", birthday:"", about:""})
+    setDefaultSelectedCard();
   }
 
   function handleCardEditClick(card) {
@@ -134,7 +130,7 @@ function App() {
     copy[fromindex] = {};
     setPersons(copy);
     //Устанавливаем карточку по дефолту
-    setSelectedCard({name:"", image:{file:"", imageUrl:photo}, place:"", gender:"", birthday:"", about:""})
+    setDefaultSelectedCard();
   }
 
   return (
