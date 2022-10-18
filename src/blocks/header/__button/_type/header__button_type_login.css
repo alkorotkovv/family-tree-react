@@ -1,0 +1,12 @@
+@media (max-width: 550px) {
+  .header__button_type_login {
+    background-image: url(../../../../images/user.png);
+  }
+}
+
+@media (max-width: 400px) {
+  .header__button_type_login {
+    width: 25px;
+    height: 25px;
+  }
+}

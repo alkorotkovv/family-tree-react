@@ -44,7 +44,6 @@
 
 @media (max-width: 550px) {
   .header__button {
-    background-image: url(../../../images/user.png);
     background-repeat: no-repeat;
     background-size: cover;
     border: none;

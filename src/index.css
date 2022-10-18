@@ -78,3 +78,7 @@
 @import url(./blocks/form/_type/form_type_login.css);
 
 @import url(./blocks/form/__save-button/_type/form__save-button_type_login.css);
+
+@import url(./blocks/header/__button/_type/header__button_type_exit.css);
+@import url(./blocks/header/__button/_type/header__button_type_login.css);
+@import url(./blocks/header/__button/_type/header__button_type_register.css);

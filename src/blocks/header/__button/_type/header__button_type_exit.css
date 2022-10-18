@@ -1,0 +1,12 @@
+@media (max-width: 550px) {
+  .header__button_type_exit {
+    background-image: url(../../../../images/exit.png);
+  }
+}
+
+@media (max-width: 400px) {
+  .header__button_type_exit {
+    width: 25px;
+    height: 25px;
+  }
+}

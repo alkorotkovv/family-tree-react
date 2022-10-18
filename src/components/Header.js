@@ -13,18 +13,18 @@ function Header(props) {
   switch (location.pathname) {
     case "/sign-in":
       block = (
-        <Link to="/sign-up" className="header__button">Регистрация</Link>
+        <Link to="/sign-up" className="header__button header__button_type_register">Регистрация</Link>
       )
       break;
     case "/sign-up":
 
       block = (
-        <Link to="/sign-in" className="header__button">Войти</Link>
+        <Link to="/sign-in" className="header__button header__button_type_login">Войти</Link>
       )
       break;
     case "/":
       block = (
-        <button className="header__button" onClick={handleClick}>Выйти</button>
+        <button className="header__button header__button_type_exit" onClick={handleClick}>Выйти</button>
       )
       break;
   }

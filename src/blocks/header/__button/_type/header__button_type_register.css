@@ -1,0 +1,12 @@
+@media (max-width: 550px) {
+  .header__button_type_register {
+    background-image: url(../../../../images/register.png);
+  }
+}
+
+@media (max-width: 400px) {
+  .header__button_type_register {
+    width: 25px;
+    height: 25px;
+  }
+}
