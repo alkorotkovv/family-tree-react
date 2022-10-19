@@ -37,20 +37,20 @@
 
 @media (max-width: 470px) {
   .popup__close-button {
-    width: 16px;
-    height: 16px;
-    top: -25px;
+    width: 20px;
+    height: 20px;
+    top: -30px;
     right: -6px;
-    background-size: 8px 8px;
+    background-size: 10px 10px;
   }
 }
 
 @media (max-width: 380px) {
   .popup__close-button {
-    width: 14px;
-    height: 14px;
-    top: -20px;
+    width: 18px;
+    height: 18px;
+    top: -24px;
     right: -3px;
-    background-size: 7px 7px;
+    background-size: 8px 8px;
   }
 }

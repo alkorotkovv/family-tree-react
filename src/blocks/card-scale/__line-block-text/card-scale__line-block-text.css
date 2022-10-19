@@ -16,17 +16,18 @@
 @media (max-width: 767px) {
   .card-scale__line-block-text {
     font-size: 12px;
+    letter-spacing: -0.5px;
   }
 }
 
 @media (max-width: 470px) {
   .card-scale__line-block-text {
-    font-size: 12px;
+    font-size: 12px;    
   }
 }
 
 @media (max-width: 380px) {
   .card-scale__line-block-text {
-    font-size: 6px;
+    font-size: 10px;
   }
 }
