@@ -36,7 +36,7 @@
 
 @media (max-width: 470px) {
   .card-scale {
-    width: 300px;
+    width: 340px;
     padding: 4px;
     gap: 10px;
     box-shadow: 0 0 0 4px antiquewhite;
