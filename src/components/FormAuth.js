@@ -24,11 +24,11 @@ function FormAuth(props) {
       <fieldset className="form__info">
         <label className="form__field">
           <input className="form__input form__input_content_email" id="input-email" type="text" autoComplete="email" value={email} onChange={handleEmailChange} name="email" placeholder="Email" required minLength="2" maxLength="40"/>
-          <span className="form__input-error input-email-error" ></span>
+          <span className="form__input-error form__input-error_type_login input-email-error" ></span>
         </label>
         <label className="form__field">
           <input className="form__input form__input_content_password" id="input-password" type="password" autoComplete="current-password" value={password} onChange={handlePasswordChange} name="password" placeholder="Пароль" required minLength="2" maxLength="200"/>
-          <span className="form__input-error input-password-error" ></span>
+          <span className="form__input-error form__input-error_type_login input-password-error" ></span>
         </label>
       </fieldset>
       <button className="form__save-button form__save-button_type_login" type="submit" >{props.buttonText}</button>      

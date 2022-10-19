@@ -89,3 +89,6 @@
 @import url(./blocks/form/__field/_content/form__field_content_birthday.css);
 @import url(./blocks/form/__field/_content/form__field_content_place.css);
 @import url(./blocks/form/__field/_content/form__field_content_about.css);
+
+@import url(./blocks/form/__input-error/_type/form__input-error_type_login.css);
+@import url(./blocks/form/__title/_type/form___title_type_login.css);
