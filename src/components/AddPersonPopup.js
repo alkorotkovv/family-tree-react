@@ -75,8 +75,8 @@ function AddPersonPopup(props) {
   }
 
   return (
-    <Popup isOpen={props.isOpen} onClose={handleClose}>
-      <form className="form form_card_add" name="form_card_add" >
+    <Popup isOpen={props.isOpen} onClose={handleClose} type="popup_type_add" >
+      <form className="form form_type_add" name="form_type_add" >
         <h2 className="form__title">Информация о человеке</h2>
         <div className="form__main">
           <div className="form__image" >

@@ -1,9 +1,16 @@
 .form__image {
   margin: 0;
   padding: 0;
-  width: 200px;
-  height: 280px;
+  width: 300px;
+  height: 400px;
   display: flex;
   box-sizing: border-box;
   position: relative;
+}
+
+@media (max-width: 1100px) {
+  .form__image {
+    width: 210px;
+    height: 280px;
+  }
 }

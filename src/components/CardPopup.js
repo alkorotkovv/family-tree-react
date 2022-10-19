@@ -11,7 +11,7 @@ function CardPopup(props) {
   }
 
   return (
-    <Popup isOpen={props.isOpen} onClose={props.onClose}>
+    <Popup isOpen={props.isOpen} onClose={props.onClose} type="popup_type_card" >
         <div className="card-scale">
           <div className="card-scale__main">
             <img className="card-scale__image" src={props.card.image.imageUrl} alt="попап фотография" />

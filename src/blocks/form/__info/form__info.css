@@ -1,5 +1,5 @@
 .form__info {
-  width: 400px;
+  width: 446px;
   margin: 0;
   padding: 0;
   border: 0;
@@ -8,8 +8,8 @@
   align-items: center;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1100px) {
   .form__info {
-
+    width: 350px;
   }
 }

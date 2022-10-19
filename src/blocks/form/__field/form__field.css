@@ -1,6 +1,5 @@
 .form__field {
   width: 100%;
-  max-width: 358px;
   margin: 0;
   padding: 0;
   display: flex;
@@ -9,6 +8,5 @@
 
 @media (max-width: 600px) {
   .form__field {
-    max-width: 238px;
   }
 }
