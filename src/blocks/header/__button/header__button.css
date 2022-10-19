@@ -19,10 +19,8 @@
 }
 
 .header__button:hover {
-  /*
   background-color: white;
   color: black;
-  */
   cursor: pointer;
 }
 
@@ -55,9 +53,11 @@
   }
 }
 
-@media (max-width: 400px) {
-  .header__button {
-    width: 25px;
-    height: 25px;
+@media (max-width: 550px) {
+  .header__button:hover {
+    background-color: transparent;
+    color: transparent;
+    cursor: pointer;
+    opacity: 0.7;
   }
 }

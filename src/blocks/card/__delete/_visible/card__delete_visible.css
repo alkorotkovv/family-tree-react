@@ -1,3 +1,9 @@
 .card__delete_visible {
   display: flex;
 }
+
+@media (max-width: 767px) {
+  .card__delete_visible {
+    display: none;
+  }
+}

@@ -1,3 +1,15 @@
 .card__content_male {
   border: 2px solid  #92d7ff;
 }
+
+@media (max-width: 470px) {
+  .card__content_male {
+    border: 1px solid  #92d7ff;
+  }
+}
+
+@media (max-width: 330px) {
+  .card__content_male {
+    border: 1px solid  #92d7ff;
+  }
+}

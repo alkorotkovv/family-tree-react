@@ -6,4 +6,6 @@
   justify-content: center;
   background-color: #2a2c2f;
   color: white;
+  box-shadow: 0 6px 20px 0px rgba(0, 0, 0, 0.8);
+  z-index: 1;
 }
