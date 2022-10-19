@@ -7,3 +7,21 @@
 .form__input_content_about:focus {
   border: 1px solid rgba(0, 0, 0, 1);;
 }
+
+@media (max-width: 767px) {
+  .form__input_content_about {
+    min-height: 100px;
+  }
+}
+
+@media (max-width: 470px) {
+  .form__input_content_about {
+    min-height: 80px;
+  }
+}
+
+@media (max-width: 380px) {
+  .form__input_content_about {
+    min-height: 60px;
+  }
+}

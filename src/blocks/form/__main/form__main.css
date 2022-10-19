@@ -2,30 +2,47 @@
   width: 100%;
   margin: 0;
   padding-bottom: 20px;
-  display: flex;
-  gap: 20px;
+  display: grid;
+  column-gap: 20px;
+  grid-template-columns: auto 1fr;
+  grid-template-areas:
+      "image name"
+      "image gender"
+      "image birthday"
+      "image place"
+      "image about"
+      "image ."
 }
 
 @media (max-width: 1100px) {
   .form__main {
-    gap: 16px;
+    padding-bottom: 0;
+    column-gap: 16px;
+    grid-template-areas:
+      "image name"
+      "image gender"
+      "image birthday"
+      "image place"
+      "image ."
+      "about about"
   }
 }
 
+
 @media (max-width: 767px) {
   .form__main {
-    gap: 12px;
+    column-gap: 12px;
   }
 }
 
 @media (max-width: 470px) {
   .form__main {
-    gap: 10px;
+    column-gap: 10px;
   }
 }
 
 @media (max-width: 380px) {
   .form__main {
-    gap: 6px;
+    column-gap: 6px;
   }
 }

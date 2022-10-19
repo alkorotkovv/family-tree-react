@@ -6,11 +6,33 @@
   display: flex;
   box-sizing: border-box;
   position: relative;
+  grid-area: image;
 }
 
 @media (max-width: 1100px) {
   .form__image {
     width: 210px;
     height: 280px;
+  }
+}
+
+@media (max-width: 767px) {
+  .form__image {
+    width: 150px;
+    height: 200px;
+  }
+}
+
+@media (max-width: 470px) {
+  .form__image {
+    width: 120px;
+    height: 160px;
+  }
+}
+
+@media (max-width: 380px) {
+  .form__image {
+    width: 90px;
+    height: 120px;
   }
 }

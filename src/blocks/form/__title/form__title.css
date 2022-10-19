@@ -1,7 +1,7 @@
 .form__title {
   width: 100%;
   margin: 0;
-  padding: 0 0 30px 0;
+  padding: 10px 0 30px 0;
   box-sizing: border-box;
   font-weight: 900;
   font-size: 28px;
@@ -10,10 +10,16 @@
   text-align: center;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 767px) {
   .form__title {
     font-size: 18px;
-    line-height: 1.22;
-    padding-bottom: 15px;
+    padding: 10px 0;
+  }
+}
+
+@media (max-width: 470px) {
+  .form__title {
+    font-size: 16px;
+    padding: 10px 0;
   }
 }
