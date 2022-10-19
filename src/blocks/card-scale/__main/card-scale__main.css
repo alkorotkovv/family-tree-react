@@ -4,3 +4,27 @@
   display: flex;
   gap: 20px;
 }
+
+@media (max-width: 1100px) {
+  .card-scale__main {
+    gap: 18px;
+  }
+}
+
+@media (max-width: 767px) {
+  .card-scale__main {
+    gap: 12px;
+  }
+}
+
+@media (max-width: 470px) {
+  .card-scale__main {
+    gap: 8px;
+  }
+}
+
+@media (max-width: 380px) {
+  .card-scale__main {
+    gap: 6px;
+  }
+}

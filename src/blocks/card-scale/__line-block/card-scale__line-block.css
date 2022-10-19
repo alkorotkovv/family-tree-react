@@ -3,3 +3,9 @@
   padding: 2px 0;
   display: flex;
 }
+
+@media (max-width: 470px) {
+  .card-scale__line-block {
+    padding: 1px 0;
+  }
+}

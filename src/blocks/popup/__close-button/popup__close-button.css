@@ -24,11 +24,33 @@
   background-image: url(../../../images/closeWhite.svg);
 }
 
-@media (max-width: 600px) {
+@media (max-width: 767px) {
   .popup__close-button {
-    width: 20px;
-    height: 20px;
-    top: -36px;
-    right: 0px;
+    width: 22px;
+    height: 22px;
+    top: -25px;
+    right: -25px;
+    background-size: 11px 11px;
+  }
+}
+
+
+@media (max-width: 470px) {
+  .popup__close-button {
+    width: 16px;
+    height: 16px;
+    top: -25px;
+    right: -6px;
+    background-size: 8px 8px;
+  }
+}
+
+@media (max-width: 380px) {
+  .popup__close-button {
+    width: 14px;
+    height: 14px;
+    top: -20px;
+    right: -3px;
+    background-size: 7px 7px;
   }
 }

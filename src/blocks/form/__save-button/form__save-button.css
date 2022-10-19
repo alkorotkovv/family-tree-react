@@ -22,10 +22,30 @@
   color: white;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 767px) {
   .form__save-button {
-    height: 46px;
-    font-size: 14px;
+    height: 34px;
+    font-size: 12px;
     line-height: 1.2;
+    border-radius: 12px;
+  }
+}
+
+@media (max-width: 470px) {
+  .form__save-button {
+    height: 24px;
+    font-size: 10px;
+    line-height: 1.2;
+    border-radius: 8px;
+    border: 1px solid #696355;
+  }
+}
+
+@media (max-width: 380px) {
+  .form__save-button {
+    height: 18px;
+    font-size: 8px;
+    line-height: 1.2;
+    border-radius: 6px;
   }
 }
