@@ -14,7 +14,7 @@ function AckPopup(props) {
   }
 
   return (
-    <Popup isOpen={props.isOpen} onClose={props.onClose}>
+    <Popup isOpen={props.isOpen} onClose={props.onClose} type="popup_type_ack">
         <form className="form form_type_delete" name="form_type_delete" noValidate>
           <h2 className="form__title">Вы уверены что хотите удалить карточку?</h2>
           <div className="form__buttons">

@@ -28,7 +28,7 @@
 @media (max-width: 767px) {
   .card-scale {
     width: 400px;
-    padding: 7px;
+    padding: 10px;
     gap: 12px;
     box-shadow: 0 0 0 7px antiquewhite;
   }
@@ -37,7 +37,7 @@
 @media (max-width: 470px) {
   .card-scale {
     width: 340px;
-    padding: 4px;
+    padding: 7px;
     gap: 10px;
     box-shadow: 0 0 0 4px antiquewhite;
   }
@@ -46,7 +46,7 @@
 @media (max-width: 380px) {
   .card-scale {
     width: 280px;
-    padding: 2px;
+    padding: 7px;
     gap: 6px;
     box-shadow: 0 0 0 2px antiquewhite;
   }

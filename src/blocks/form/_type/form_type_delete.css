@@ -1,3 +1,15 @@
 .form_type_delete {
   width: 400px;
 }
+
+@media (max-width: 470px) {
+  .form_type_delete {
+    width: 300px;
+  }
+}
+
+@media (max-width: 380px) {
+  .form_type_delete {
+    width: 250px;
+  }
+}
