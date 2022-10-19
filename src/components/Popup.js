@@ -2,8 +2,6 @@ import React from 'react';
 
 function Popup(props) {
 
-  console.log(props.type);
-
   function handleClick(evt) {
     if (evt.target.classList.contains('popup_opened'))
     props.onClose();

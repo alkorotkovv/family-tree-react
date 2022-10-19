@@ -12,6 +12,7 @@ import Register from './Register';
 import Login from './Login';
 import ProtectedRoute from './ProtectedRoute';
 import InfoTooltip from './InfoTooltip';
+import Menu from './Menu';
 
 function App() {
 
@@ -26,6 +27,7 @@ function App() {
   const [tooltip, setTooltipText] = React.useState({text:"текст ошибки", isAnswerGood: false});
   const [isInfoTooltipPopupOpen, setIsInfoTooltipPopupOpen] = React.useState(false);
   const history = useHistory();
+  const [isMenuVisible, setIsMenuVisible] = React.useState(false);
     
   React.useEffect(() => {
     checkGeneration();
@@ -155,9 +157,20 @@ function App() {
     history.push("/sign-in");
   }
 
+  function handleOpenMenu() {
+    console.log("открыть меню");
+    setIsMenuVisible(true);
+  }
+
+  function closeMenu() {
+    console.log("закрыть меню");
+    setIsMenuVisible(false);
+  }
+
   return (
     <div className="page">
-      <Header onExit={handleExitSubmit} />
+      <Header onOpenMenu={handleOpenMenu} onExit={handleExitSubmit} />
+      <Menu isOpen ={isMenuVisible} onClose={closeMenu} />
       <Switch>
         <Route path="/sign-in">
           <Login onLogin={handleLoginSubmit} />

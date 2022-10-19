@@ -1,0 +1,12 @@
+.header__burger {
+  margin: 0;
+  padding: 0;
+  display: none;
+  justify-self: end;
+}
+
+@media (max-width: 767px) {
+  .header__burger {
+    display: flex;
+  }
+}
