@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/family-tree-react/static/css/main.94fec0b8.css",
-    "main.js": "/family-tree-react/static/js/main.9b1f8433.js",
+    "main.css": "/family-tree-react/static/css/main.e1c55627.css",
+    "main.js": "/family-tree-react/static/js/main.f2e239ba.js",
     "static/js/787.376249ee.chunk.js": "/family-tree-react/static/js/787.376249ee.chunk.js",
     "static/media/me.jpg": "/family-tree-react/static/media/me.cd0b758a11e9a1c81adc.jpg",
     "static/media/Inter-Bold.woff?v=3.19": "/family-tree-react/static/media/Inter-Bold.93c1301bd9f486c573b3.woff",
@@ -16,12 +16,12 @@
     "static/media/closeBlack.svg": "/family-tree-react/static/media/closeBlack.11d0a249f9c3e9b9ba78.svg",
     "static/media/closeWhite.svg": "/family-tree-react/static/media/closeWhite.ad98de32e342afafa118.svg",
     "static/media/edit_avatar.svg": "/family-tree-react/static/media/edit_avatar.a086f758840ae814ecde.svg",
-    "main.94fec0b8.css.map": "/family-tree-react/static/css/main.94fec0b8.css.map",
-    "main.9b1f8433.js.map": "/family-tree-react/static/js/main.9b1f8433.js.map",
+    "main.e1c55627.css.map": "/family-tree-react/static/css/main.e1c55627.css.map",
+    "main.f2e239ba.js.map": "/family-tree-react/static/js/main.f2e239ba.js.map",
     "787.376249ee.chunk.js.map": "/family-tree-react/static/js/787.376249ee.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.94fec0b8.css",
-    "static/js/main.9b1f8433.js"
+    "static/css/main.e1c55627.css",
+    "static/js/main.f2e239ba.js"
   ]
 }
