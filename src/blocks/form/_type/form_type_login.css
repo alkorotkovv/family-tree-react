@@ -11,3 +11,9 @@
   border: none;
   box-shadow: none;
 }
+
+@media (max-width: 767px) {
+  .form_type_login {
+    padding-bottom: 10px;
+  }
+}

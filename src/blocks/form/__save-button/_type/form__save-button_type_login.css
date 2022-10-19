@@ -2,3 +2,22 @@
   width: 300px;
   margin-top: 50px;
 }
+
+@media (max-width: 767px) {
+  .form__save-button_type_login {
+    width: 200px;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 470px) {
+  .form__save-button_type_login {
+    width: 150px;
+  }
+}
+
+@media (max-width: 380px) {
+  .form__save-button_type_login {
+    width: 120px;
+  }
+}
