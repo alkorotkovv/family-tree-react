@@ -8,7 +8,7 @@ function Popup(props) {
   }
 
   return (
-    <div className={`popup ` + (props.type) + (props.isOpen && " popup_opened")} onClick={handleClick} >
+    <div className={`popup ` + (props.type) + (props.isOpen ? " popup_opened" : "")} onClick={handleClick} >
       <div className="popup__container">
         {props.children}
         <button className="popup__close-button" type="button" aria-label="Close" onClick={props.onClose} />
