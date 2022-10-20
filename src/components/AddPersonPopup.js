@@ -1,5 +1,4 @@
 import React from 'react';
-
 import Avatar from './Avatar';
 import Popup from './Popup';
 import photo from '../images/avatar.png';
@@ -85,7 +84,17 @@ function AddPersonPopup(props) {
             <Avatar imageUrl={image.imageUrl} />
           </div>
           <label className="form__field form__field_content_name">
-            <input className="form__input form__input_content_name" id="input-name" type="text" name="name" placeholder="ФИО" value={name} onChange={handleNameChange} required minLength="2" maxLength="30" />
+            <input 
+              className="form__input form__input_content_name" 
+              id="input-name"               
+              type="text"  
+              name="name"              
+              placeholder="ФИО" 
+              value={name} 
+              onChange={handleNameChange} 
+              required 
+              minLength="2" 
+              maxLength="30" />
             <span className="form__input-error input-name-error" />
           </label>
           <div className="form__genders">
@@ -96,18 +105,39 @@ function AddPersonPopup(props) {
             </select>
           </div>
           <label className="form__field form__field_content_birthday">
-            <input className="form__input form__input_content_birthday" id="input-birthday" type="text" name="birthday" placeholder="Дата рождения" value={birthday} onChange={handleBirthdayChange} />
+            <input 
+              className="form__input form__input_content_birthday" 
+              id="input-birthday" 
+              type="text" 
+              name="birthday" 
+              placeholder="Дата рождения" 
+              value={birthday} 
+              onChange={handleBirthdayChange} />
             <span className="form__input-error input-birthday-error" />
           </label>
           <label className="form__field form__field_content_place">
-            <input className="form__input form__input_content_place" id="input-place" type="text" name="place" placeholder="Место рождения" value={place} onChange={handlePlaceChange} />
+            <input 
+              className="form__input form__input_content_place" 
+              id="input-place" 
+              type="text" 
+              name="place" 
+              placeholder="Место рождения" 
+              value={place} 
+              onChange={handlePlaceChange} />
             <span className="form__input-error input-place-error" />
           </label>              
           <label className="form__field form__field_content_about">
-            <textarea className="form__input form__input_content_about" id="input-about" type="text" name="about" placeholder="Информация о человеке" value={about} onChange={handleAboutChange}></textarea>
+            <textarea 
+              className="form__input form__input_content_about" 
+              id="input-about" 
+              type="text" 
+              name="about" 
+              placeholder="Информация о человеке" 
+              value={about} 
+              onChange={handleAboutChange} />
           </label>
         </div>
-        <button className="form__save-button" type="submit" onClick={handleSubmit} >Сохранить</button>
+        <button className="form__save-button" type="submit" onClick={handleSubmit}>Сохранить</button>
       </form>
     </Popup>
   )

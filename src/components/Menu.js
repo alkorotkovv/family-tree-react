@@ -8,7 +8,7 @@ function Menu(props) {
 
   function handleClick(evt) {
     if (evt.target.classList.contains('menu_visible'))
-    props.onClose();
+      props.onClose();
   }
 
   function handleExitClick() {

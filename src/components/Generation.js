@@ -5,12 +5,12 @@ import Card from "./Card.js";
 
 function Generation(props) {
 
-  let areas=[];
+  const areas=[];
   for (let i = 0; i < AreasCount; i++) {
-    areas.push(i)
+    areas.push(i);
   }
   
-  let genPersons = props.persons.slice(props.id*10, props.id*10 + 10);
+  const genPersons = props.persons.slice(props.id*10, props.id*10 + 10);
 
   return (
     <section className="generation" id={props.id}>

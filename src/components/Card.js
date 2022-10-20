@@ -1,5 +1,3 @@
-import photo from '../images/photo.png';
-
 function Card(props) {
 
   const cardTitleClassName = (`card__title ${props.card.gender === "Мужской" ? " card__title_male" :  " card__title_female"}`);
@@ -34,7 +32,14 @@ function Card(props) {
   }
 
   return (
-    <li className="card" draggable={true} onDragStart={handleDragStart} onDragLeave={handleDragLeave} onDragEnd={handleDragEnd} onDragOver={handleDragOver} onDrop={handleDrop} >
+    <li 
+      className="card" 
+      draggable={true} 
+      onDragStart={handleDragStart} 
+      onDragLeave={handleDragLeave} 
+      onDragEnd={handleDragEnd} 
+      onDragOver={handleDragOver} 
+      onDrop={handleDrop} >
       <div className={cardContentClassName} id={props.card.area} onClick={handleCardClick}>
           <img className="card__image" src={props.card.image.imageUrl} alt="фотография" />
           <h2 className={cardTitleClassName}>{props.card.name}</h2>        

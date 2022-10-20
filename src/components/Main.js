@@ -3,7 +3,7 @@ import Generation from './Generation';
 
 function Main(props) {
 
-  let sections=[0];
+  const sections=[0];
   for (let i = 1; i < props.genCount; i++) {
     sections.push(i)
   }

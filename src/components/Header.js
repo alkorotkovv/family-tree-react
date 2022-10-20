@@ -12,7 +12,6 @@ function Header(props) {
   }
 
   function handleBurgerClick() {
-    console.log("fhfhfhf")
     props.onOpenMenu();
   }
 
@@ -23,7 +22,6 @@ function Header(props) {
       )
       break;
     case "/sign-up":
-
       block = (
         <Link to="/sign-in" className="header__button" title="Войти">Войти</Link>
       )

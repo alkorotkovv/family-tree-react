@@ -7,7 +7,7 @@ function InfoTooltip(props) {
 
   function handleClick(evt) {
     if (evt.target.classList.contains('popup_opened'))
-    props.onClose();
+      props.onClose();
   }
 
   return (

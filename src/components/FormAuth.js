@@ -54,8 +54,7 @@ function FormAuth(props) {
       <button 
         className={"form__save-button form__save-button_type_login" + (isValid ? "" : " form__save-button_disabled" )} 
         type="submit" 
-        disabled={!isValid}
-        >
+        disabled={!isValid} >
           {props.buttonText}
       </button>      
     </form>

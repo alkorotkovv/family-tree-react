@@ -129,7 +129,7 @@ function App() {
   }
 
   function handleDrag(card) {
-    setSelectedCard(card)
+    setSelectedCard(card);
   }
 
   function handleDrop(area) {
@@ -142,7 +142,7 @@ function App() {
     Object.assign(newCard, selectedCard);
     //Присваиваем этому клону индекс = новый индекс (место куда переместили карточку)
     newCard.area = area;
-    setSelectedCard(newCard)
+    setSelectedCard(newCard);
     //Обновляем массив со всеми данными
     copy[toindex] = newCard;
     copy[fromindex] = {};
@@ -165,10 +165,10 @@ function App() {
     }
   }  
 
-   //Обработчик сабмита формы регистрации
-   function handleRegisterSubmit(email, password) {
-      handleTooltipDisplay("Регистрация в процессе разработки", false);
-      setIsInfoTooltipPopupOpen(true);    
+  //Обработчик сабмита формы регистрации
+  function handleRegisterSubmit(email, password) {
+    handleTooltipDisplay("Регистрация в процессе разработки", false);
+    setIsInfoTooltipPopupOpen(true);    
   }  
 
   //Обработчик выхода из аккаунта
@@ -179,19 +179,17 @@ function App() {
   }
 
   function handleOpenMenu() {
-    console.log("открыть меню");
     setIsMenuVisible(true);
   }
 
-  function closeMenu() {
-    console.log("закрыть меню");
+  function handleCloseMenu() {
     setIsMenuVisible(false);
   }
 
   return (
     <div className="page">
       <Header onOpenMenu={handleOpenMenu} onExit={handleExitSubmit} />
-      <Menu isOpen ={isMenuVisible} onClose={closeMenu} onExit={handleExitSubmit} />
+      <Menu isOpen ={isMenuVisible} onClose={handleCloseMenu} onExit={handleExitSubmit} />
       <Switch>
         <Route path="/sign-in">
           <Login onLogin={handleLoginSubmit} />
@@ -243,7 +241,12 @@ function App() {
         card={selectedCard}
         onCardDeleteClick={handleCardDeleteClick}
       />
-      <InfoTooltip isOpen={isInfoTooltipPopupOpen} onClose={closeAllPopups} isAnswerGood={tooltip.isAnswerGood} title={tooltip.text} />
+      <InfoTooltip 
+        isOpen={isInfoTooltipPopupOpen} 
+        onClose={closeAllPopups} 
+        isAnswerGood={tooltip.isAnswerGood} 
+        title={tooltip.text} 
+      />
     </div>
   )
 }

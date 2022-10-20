@@ -1,5 +1,3 @@
-import Card from "./Card";
-
 function AddPerson(props) {
 
   let areaId = props.genid * 10 + props.id;
@@ -14,7 +12,7 @@ function AddPerson(props) {
 
   function handleDrop(evt) {
     evt.preventDefault();
-    props.onDrop(areaId)
+    props.onDrop(areaId);
   }
 
   return (
