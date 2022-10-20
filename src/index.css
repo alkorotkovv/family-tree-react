@@ -92,6 +92,7 @@
 @import url(./blocks/menu/menu.css);
 @import url(./blocks/menu/__items/menu__items.css);
 @import url(./blocks/menu/__item/menu__item.css);
+@import url(./blocks/menu/__item/_type/menu__item_type_button.css);
 @import url(./blocks/menu/_visible/menu_visible.css);
 @import url(./blocks/menu/__items/_visible/menu__items_visible.css);
 @import url(./blocks/header/__burger/header__burger.css);

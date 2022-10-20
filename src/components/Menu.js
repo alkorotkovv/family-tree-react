@@ -19,18 +19,18 @@ function Menu(props) {
   switch (location.pathname) {
     case "/sign-in":
       block = (
-        <Link to="/sign-up" className="menu__item" onClick={props.onClose} title="Зарегистрироваться">Регистрация</Link>
+        <Link to="/sign-up" className="menu__item menu__item_type_button" onClick={props.onClose} title="Зарегистрироваться">Регистрация</Link>
       )
       break;
     case "/sign-up":
 
       block = (
-        <Link to="/sign-in" className="menu__item" onClick={props.onClose} title="Войти">Войти</Link>
+        <Link to="/sign-in" className="menu__item menu__item_type_button" onClick={props.onClose} title="Войти">Войти</Link>
       )
       break;
     case "/":
       block = (
-        <button className="menu__item" onClick={handleExitClick} title="Выйти">Выйти</button>
+        <button className="menu__item menu__item_type_button" onClick={handleExitClick} title="Выйти">Выйти</button>
       )
       break;
   }

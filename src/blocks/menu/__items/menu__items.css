@@ -1,5 +1,5 @@
 .menu__items {
-  width: 250px;
+  width: 300px;
   height: 100vh;
   margin: 0;
   padding: 30px;
@@ -13,32 +13,32 @@
   font-weight: 400;
   line-height: 1.06;
   font-size: 20px;
-  background-color: black;
-  right: -250px;
+  background-color: rgb(42, 44, 47);
+  right: -300px;
   position: absolute;
   transition: right 0.3s;
 }
 
 @media (max-width: 600px) {
   .menu__items {
-    width: 200px;
-    right: -200px;
+    width: 250px;
+    right: -250px;
     font-size: 16px;    
   }
 }
 
 @media (max-width: 470px) {
   .menu__items {
-    width: 150px;
-    right: -150px;
+    width: 200px;
+    right: -200px;
     font-size: 12px;    
   }
 }
 
 @media (max-width: 380px) {
   .menu__items {
-    width: 130px;
-    right: -130px;
+    width: 160px;
+    right: -160px;
     font-size: 9px;    
   }
 }
