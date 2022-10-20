@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/family-tree-react/static/css/main.f8ca5823.css",
-    "main.js": "/family-tree-react/static/js/main.a1b81190.js",
+    "main.css": "/family-tree-react/static/css/main.c81af2c2.css",
+    "main.js": "/family-tree-react/static/js/main.3e2deb8c.js",
     "static/js/787.376249ee.chunk.js": "/family-tree-react/static/js/787.376249ee.chunk.js",
     "static/media/me.jpg": "/family-tree-react/static/media/me.cd0b758a11e9a1c81adc.jpg",
     "static/media/Inter-Bold.woff?v=3.19": "/family-tree-react/static/media/Inter-Bold.93c1301bd9f486c573b3.woff",
@@ -10,18 +10,20 @@
     "static/media/Inter-Bold.woff2?v=3.19": "/family-tree-react/static/media/Inter-Bold.ec64ea577b0349e055ad.woff2",
     "static/media/Inter-Black.woff2?v=3.19": "/family-tree-react/static/media/Inter-Black.15ca31c0a2a68f76d2d1.woff2",
     "static/media/Inter-Regular.woff2?v=3.19": "/family-tree-react/static/media/Inter-Regular.c8ba52b05a9ef10f4758.woff2",
+    "static/media/fundamental-brigade.woff": "/family-tree-react/static/media/fundamental-brigade.7c7c8188b27b94fd2b20.woff",
+    "static/media/fundamental-brigade.woff2": "/family-tree-react/static/media/fundamental-brigade.546ee366a907dbf5d070.woff2",
     "static/media/photo.png": "/family-tree-react/static/media/photo.34c21f27ef2ee873f127.png",
     "index.html": "/family-tree-react/index.html",
     "static/media/urn.svg": "/family-tree-react/static/media/urn.dd0f67df9083d3a4d1d4.svg",
     "static/media/closeBlack.svg": "/family-tree-react/static/media/closeBlack.11d0a249f9c3e9b9ba78.svg",
     "static/media/closeWhite.svg": "/family-tree-react/static/media/closeWhite.ad98de32e342afafa118.svg",
     "static/media/edit_avatar.svg": "/family-tree-react/static/media/edit_avatar.a086f758840ae814ecde.svg",
-    "main.f8ca5823.css.map": "/family-tree-react/static/css/main.f8ca5823.css.map",
-    "main.a1b81190.js.map": "/family-tree-react/static/js/main.a1b81190.js.map",
+    "main.c81af2c2.css.map": "/family-tree-react/static/css/main.c81af2c2.css.map",
+    "main.3e2deb8c.js.map": "/family-tree-react/static/js/main.3e2deb8c.js.map",
     "787.376249ee.chunk.js.map": "/family-tree-react/static/js/787.376249ee.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f8ca5823.css",
-    "static/js/main.a1b81190.js"
+    "static/css/main.c81af2c2.css",
+    "static/js/main.3e2deb8c.js"
   ]
 }
