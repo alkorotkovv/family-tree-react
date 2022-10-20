@@ -33,6 +33,21 @@ function App() {
     checkGeneration();
   }, [persons]);
 
+  React.useEffect(() => {
+    if (isAddPersonPopupVisible || isCardPopupVisible || isAckPopupVisible || isInfoTooltipPopupOpen)
+      document.addEventListener("keydown", handleKeyPress);
+    return () => { document.removeEventListener("keydown", handleKeyPress)};
+  }, [isAddPersonPopupVisible,
+      isCardPopupVisible,
+      isAckPopupVisible,
+      isInfoTooltipPopupOpen
+  ])
+
+  function handleKeyPress(evt) {
+    if (evt.key === 'Escape')
+      closeAllPopups();
+  }
+
   //Функция для проверки создания нового поколения
   function checkGeneration() {
     let lastGenPersons = persons.slice((genCount-1)*10, (genCount-1)*10 + 10);
