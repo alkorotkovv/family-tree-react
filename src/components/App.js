@@ -153,16 +153,22 @@ function App() {
 
   //Обработчик сабмита формы входа
   function handleLoginSubmit(email, password) {
-    if ((email==="1") && (password==="1")) {
+    if ((email==="1@1") && (password==="1@1")) {
       //localStorage.setItem('token', res.token);
       //setEmail(email);
       setLoggedIn(true);
       history.push("/");
     }
     else {
-      handleTooltipDisplay("Введенные данные некорректны", false);
+      handleTooltipDisplay("Неправильный логин или пароль", false);
       setIsInfoTooltipPopupOpen(true);
     }
+  }  
+
+   //Обработчик сабмита формы регистрации
+   function handleRegisterSubmit(email, password) {
+      handleTooltipDisplay("Регистрация в процессе разработки", false);
+      setIsInfoTooltipPopupOpen(true);    
   }  
 
   //Обработчик выхода из аккаунта
@@ -191,7 +197,7 @@ function App() {
           <Login onLogin={handleLoginSubmit} />
         </Route>
         <Route path="/sign-up">
-          <Register  />
+          <Register onRegister={handleRegisterSubmit} />
         </Route>
         <ProtectedRoute
             path="/"

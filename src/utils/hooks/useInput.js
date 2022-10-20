@@ -3,7 +3,7 @@ import React from 'react';
 function useInput() {
   
   const [value, setValue] = React.useState("");
-  const [isValid, setIsValid] = React.useState(true);
+  const [isValid, setIsValid] = React.useState(false);
   const [message, setMessage] = React.useState("");
   
 

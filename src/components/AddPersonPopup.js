@@ -1,4 +1,5 @@
 import React from 'react';
+
 import Avatar from './Avatar';
 import Popup from './Popup';
 import photo from '../images/avatar.png';

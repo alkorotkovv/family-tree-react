@@ -3,10 +3,13 @@ import useInput from '../utils/hooks/useInput';
 
 function FormAuth(props) {
 
+  const [isValid, setIsValid] = React.useState(false);
   const inputEmail = useInput();
   const inputPasswod = useInput();
 
-  console.log(inputEmail)
+  React.useEffect(() => {
+    setIsValid(inputEmail.isValid && inputPasswod.isValid);
+  }, [inputEmail.isValid, inputPasswod.isValid]);
 
   function handleSubmit(evt) {
     evt.preventDefault();
@@ -14,12 +17,12 @@ function FormAuth(props) {
   }
 
   return (
-    <form className="form form_type_login" name="form_login" onSubmit={handleSubmit} noValidate>
+    <form className="form form_type_login" name="form_login" onSubmit={handleSubmit} >
       <h2 className="form__title form__title_type_login">{props.title}</h2>
       <fieldset className="form__info">
         <label className="form__field">
           <input 
-            className={"form__input form__input_content_email" + (inputEmail.isValid ? "" : " form__input_type_error") }
+            className={"form__input form__input_content_email" }
             id="input-email" 
             name="email" 
             type="email" 
@@ -34,7 +37,7 @@ function FormAuth(props) {
         </label>
         <label className="form__field">
           <input 
-            className={"form__input form__input_content_password" + (inputPasswod.isValid ? "" : " form__input_type_error")}
+            className={"form__input form__input_content_password" }
             id="input-password" 
             name="password" 
             type="password" 
@@ -49,9 +52,9 @@ function FormAuth(props) {
         </label>
       </fieldset>
       <button 
-        className={"form__save-button form__save-button_type_login" + (inputEmail.isValid && inputPasswod.isValid ? "" : " form__save-button_disabled" )} 
+        className={"form__save-button form__save-button_type_login" + (isValid ? "" : " form__save-button_disabled" )} 
         type="submit" 
-        disabled={!inputEmail.isValid || !inputPasswod.isValid}
+        disabled={!isValid}
         >
           {props.buttonText}
       </button>      
