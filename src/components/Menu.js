@@ -37,7 +37,7 @@ function Menu(props) {
 
   return (
     <div className={"menu" + (props.isOpen ? " menu_visible" : "")} onClick={handleClick} >
-      <ul className="menu__items">
+      <ul className={"menu__items" + (props.isOpen ? " menu__items_visible" : "")}>
         <li><p className="menu__item" >randomemail@mail.ru</p></li>
         <li>{block}</li>
       </ul>

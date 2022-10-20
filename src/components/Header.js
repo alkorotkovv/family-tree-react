@@ -11,6 +11,11 @@ function Header(props) {
     props.onExit();
   }
 
+  function handleBurgerClick() {
+    console.log("fhfhfhf")
+    props.onOpenMenu();
+  }
+
   switch (location.pathname) {
     case "/sign-in":
       block = (
@@ -36,7 +41,7 @@ function Header(props) {
         <img className="header__logo" src={headerLogo} alt="логотип"/>
         <h1 className="header__title">Семейное дерево</h1>
         {block}
-        <img className="header__burger" src={burgerLogo} alt="бургер"/>
+        <img className="header__burger" src={burgerLogo} alt="бургер" onClick={handleBurgerClick} />
       </div>
     </header>
   )
