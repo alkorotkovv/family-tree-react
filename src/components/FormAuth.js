@@ -1,21 +1,16 @@
-import React, {useState} from 'react';
+import React from 'react';
+import useInput from '../utils/hooks/useInput';
 
 function FormAuth(props) {
 
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const inputEmail = useInput();
+  const inputPasswod = useInput();
 
-  function handleEmailChange(evt) {
-    setEmail(evt.target.value);
-  }
-
-  function handlePasswordChange(evt) {
-    setPassword(evt.target.value);
-  }
+  console.log(inputEmail)
 
   function handleSubmit(evt) {
     evt.preventDefault();
-    props.onSubmit(email, password);
+    props.onSubmit(inputEmail.value, inputPasswod.value);
   }
 
   return (
@@ -23,15 +18,43 @@ function FormAuth(props) {
       <h2 className="form__title form__title_type_login">{props.title}</h2>
       <fieldset className="form__info">
         <label className="form__field">
-          <input className="form__input form__input_content_email" id="input-email" type="text" autoComplete="email" value={email} onChange={handleEmailChange} name="email" placeholder="Email" required minLength="2" maxLength="40"/>
-          <span className="form__input-error form__input-error_type_login input-email-error" ></span>
+          <input 
+            className={"form__input form__input_content_email" + (inputEmail.isValid ? "" : " form__input_type_error") }
+            id="input-email" 
+            name="email" 
+            type="email" 
+            autoComplete="email" 
+            value={inputEmail.value} 
+            onChange={inputEmail.handleChange}             
+            placeholder="Email" 
+            required 
+            minLength="2" 
+            maxLength="40"/>
+          <span className="form__input-error form__input-error_type_login input-email-error" >{inputEmail.message}</span>
         </label>
         <label className="form__field">
-          <input className="form__input form__input_content_password" id="input-password" type="password" autoComplete="current-password" value={password} onChange={handlePasswordChange} name="password" placeholder="Пароль" required minLength="2" maxLength="200"/>
-          <span className="form__input-error form__input-error_type_login input-password-error" ></span>
+          <input 
+            className={"form__input form__input_content_password" + (inputPasswod.isValid ? "" : " form__input_type_error")}
+            id="input-password" 
+            name="password" 
+            type="password" 
+            autoComplete="current-password" 
+            value={inputPasswod.value} 
+            onChange={inputPasswod.handleChange}             
+            placeholder="Пароль" 
+            required 
+            minLength="2" 
+            maxLength="20"/>
+          <span className="form__input-error form__input-error_type_login input-password-error" >{inputPasswod.message}</span>
         </label>
       </fieldset>
-      <button className="form__save-button form__save-button_type_login" type="submit" >{props.buttonText}</button>      
+      <button 
+        className={"form__save-button form__save-button_type_login" + (inputEmail.isValid && inputPasswod.isValid ? "" : " form__save-button_disabled" )} 
+        type="submit" 
+        disabled={!inputEmail.isValid || !inputPasswod.isValid}
+        >
+          {props.buttonText}
+      </button>      
     </form>
   )
 }

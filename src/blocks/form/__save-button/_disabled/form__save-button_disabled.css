@@ -6,5 +6,7 @@
 
 .form__save-button_disabled:hover {
   opacity: 1;
+  color: grey;
+  background-color: transparent;
   cursor: default;
 }
