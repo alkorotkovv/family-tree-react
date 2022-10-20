@@ -80,6 +80,7 @@
 @import url(./blocks/form/__save-button/_type/form__save-button_type_login.css);
 
 @import url(./blocks/form/_type/form_type_add.css);
+@import url(./blocks/form/_type/form_type_tooltip.css);
 
 @import url(./blocks/form/__field/_content/form__field_content_name.css);
 @import url(./blocks/form/__field/_content/form__field_content_birthday.css);
@@ -88,6 +89,7 @@
 
 @import url(./blocks/form/__input-error/_type/form__input-error_type_login.css);
 @import url(./blocks/form/__title/_type/form___title_type_login.css);
+@import url(./blocks/form/__subtitle/form__subtitle.css);
 
 @import url(./blocks/menu/menu.css);
 @import url(./blocks/menu/__items/menu__items.css);

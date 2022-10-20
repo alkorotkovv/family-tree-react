@@ -13,3 +13,24 @@
   cursor: pointer;
   opacity: 0.8;
 }
+
+@media (max-width: 600px) {
+  .menu__item_type_button {
+    padding: 8px 32px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 470px) {
+  .menu__item_type_button {
+    padding: 6px 24px;
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 380px) {
+  .menu__item_type_button {
+    padding: 5px 20px;
+    font-size: 8px;
+  }
+}
