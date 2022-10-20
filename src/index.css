@@ -8,8 +8,13 @@
 @import url(./blocks/header/__logo/header__logo.css);
 @import url(./blocks/header/__title/header__title.css);
 @import url(./blocks/header/__button/header__button.css);
+@import url(./blocks/header/__burger/header__burger.css);
 
 @import url(./blocks/content/content.css);
+
+@import url(./blocks/generation/generation.css);
+
+@import url(./blocks/area/area.css);
 
 @import url(./blocks/card/card.css);
 @import url(./blocks/card/__content/card__content.css);
@@ -29,20 +34,37 @@
 @import url(./blocks/popup/__close-button/popup__close-button.css);
 
 @import url(./blocks/form/form.css);
-@import url(./blocks/form/__info/form__info.css);
+@import url(./blocks/form/_type/form_type_delete.css);
+@import url(./blocks/form/_type/form_type_login.css);
+@import url(./blocks/form/_type/form_type_add.css);
+@import url(./blocks/form/_type/form_type_tooltip.css);
 @import url(./blocks/form/__title/form__title.css);
-@import url(./blocks/form/__input/form__input.css);
-@import url(./blocks/form/__input/_type/form__input_type_error.css);
-@import url(./blocks/form/__input-error/form__input-error.css);
-@import url(./blocks/form/__input/_content/form__input_content_about.css);
-@import url(./blocks/form/__save-button/form__save-button.css);
-@import url(./blocks/form/__save-button/_disabled/form__save-button_disabled.css);
+@import url(./blocks/form/__title/_type/form___title_type_login.css);
+@import url(./blocks/form/__main/form__main.css);
+@import url(./blocks/form/__image/form__image.css);
 @import url(./blocks/form/__field/form__field.css);
+@import url(./blocks/form/__field/_content/form__field_content_name.css);
+@import url(./blocks/form/__field/_content/form__field_content_birthday.css);
+@import url(./blocks/form/__field/_content/form__field_content_place.css);
+@import url(./blocks/form/__field/_content/form__field_content_about.css);
 @import url(./blocks/form/__genders/form__genders.css);
 @import url(./blocks/form/__gender/form__gender.css);
 @import url(./blocks/form/__genderlabel/form__genderlabel.css);
+@import url(./blocks/form/__input/form__input.css);
+@import url(./blocks/form/__input/_content/form__input_content_about.css);
+@import url(./blocks/form/__input/_content/form__input_content_file.css);
+@import url(./blocks/form/__input/_type/form__input_type_error.css);
+@import url(./blocks/form/__input-error/form__input-error.css);
+@import url(./blocks/form/__input-error/_type/form__input-error_type_login.css);
+@import url(./blocks/form/__label/form__label.css);
+@import url(./blocks/form/__avatar/form__avatar.css);
+@import url(./blocks/form/__subtitle/form__subtitle.css);
+@import url(./blocks/form/__buttons/form__buttons.css);
+@import url(./blocks/form/__save-button/form__save-button.css);
+@import url(./blocks/form/__save-button/_type/form__save-button_type_login.css);
+@import url(./blocks/form/__save-button/_disabled/form__save-button_disabled.css);
 @import url(./blocks/form/__question/form__question.css);
-
+@import url(./blocks/form/__info/form__info.css);
 
 @import url(./blocks/card-scale/card-scale.css);
 @import url(./blocks/card-scale/__main/card-scale__main.css);
@@ -60,41 +82,9 @@
 @import url(./blocks/footer/__container/footer__container.css);
 @import url(./blocks/footer/__copyright/footer__copyright.css);
 
-
-@import url(./blocks/generation/generation.css);
-
-@import url(./blocks/button-addcard/button-addcard.css);
-
-@import url(./blocks/area/area.css);
-
-@import url(./blocks/form/__image/form__image.css);
-@import url(./blocks/form/__main/form__main.css);
-@import url(./blocks/form/__inputs/form__inputs.css);
-@import url(./blocks/form/__input/_content/form__input_content_file.css);
-@import url(./blocks/form/__label/form__label.css);
-@import url(./blocks/form/__avatar/form__avatar.css);
-@import url(./blocks/form/__buttons/form__buttons.css);
-@import url(./blocks/form/_type/form_type_delete.css);
-@import url(./blocks/form/_type/form_type_login.css);
-
-@import url(./blocks/form/__save-button/_type/form__save-button_type_login.css);
-
-@import url(./blocks/form/_type/form_type_add.css);
-@import url(./blocks/form/_type/form_type_tooltip.css);
-
-@import url(./blocks/form/__field/_content/form__field_content_name.css);
-@import url(./blocks/form/__field/_content/form__field_content_birthday.css);
-@import url(./blocks/form/__field/_content/form__field_content_place.css);
-@import url(./blocks/form/__field/_content/form__field_content_about.css);
-
-@import url(./blocks/form/__input-error/_type/form__input-error_type_login.css);
-@import url(./blocks/form/__title/_type/form___title_type_login.css);
-@import url(./blocks/form/__subtitle/form__subtitle.css);
-
 @import url(./blocks/menu/menu.css);
 @import url(./blocks/menu/__items/menu__items.css);
 @import url(./blocks/menu/__item/menu__item.css);
 @import url(./blocks/menu/__item/_type/menu__item_type_button.css);
 @import url(./blocks/menu/_visible/menu_visible.css);
 @import url(./blocks/menu/__items/_visible/menu__items_visible.css);
-@import url(./blocks/header/__burger/header__burger.css);
