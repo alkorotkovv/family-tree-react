@@ -6,26 +6,26 @@ function Menu(props) {
   const location = useLocation();
   let block;
 
-  function handleExitClick() {
-    //props.onOpenMenu();
-    console.log("Нажали выйти");
-  }
-
   function handleClick(evt) {
     if (evt.target.classList.contains('menu_visible'))
     props.onClose();
   }
 
+  function handleExitClick() {
+    props.onClose();
+    props.onExit();
+  }
+
   switch (location.pathname) {
     case "/sign-in":
       block = (
-        <Link to="/sign-up" className="menu__item" title="Зарегистрироваться">Регистрация</Link>
+        <Link to="/sign-up" className="menu__item" onClick={props.onClose} title="Зарегистрироваться">Регистрация</Link>
       )
       break;
     case "/sign-up":
 
       block = (
-        <Link to="/sign-in" className="menu__item" title="Войти">Войти</Link>
+        <Link to="/sign-in" className="menu__item" onClick={props.onClose} title="Войти">Войти</Link>
       )
       break;
     case "/":

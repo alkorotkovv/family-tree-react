@@ -170,7 +170,7 @@ function App() {
   return (
     <div className="page">
       <Header onOpenMenu={handleOpenMenu} onExit={handleExitSubmit} />
-      <Menu isOpen ={isMenuVisible} onClose={closeMenu} />
+      <Menu isOpen ={isMenuVisible} onClose={closeMenu} onExit={handleExitSubmit} />
       <Switch>
         <Route path="/sign-in">
           <Login onLogin={handleLoginSubmit} />
