@@ -1,118 +1,139 @@
+@mixin menu($width, $size) {
+  width: $width;
+  right: -$width;
+  font-size: $size;  
+}
+
+@mixin button($paddings, $size) {
+  padding: $paddings;
+  font-size: $size; 
+}
+
 .menu {
-  width: 100%;
-  height: 100%;
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100%;  
   display: flex;
   visibility: hidden;
   opacity: 0;
-  justify-content: end;
   background-color: rgba(42, 44, 47, 0.5);
   position: fixed;
   z-index: 1000;
   top: 0;
   left: 0;
   transition: visibility 0.3s, opacity 0.3s linear;
-}
 
-.menu_visible {
-  visibility: visible;
-  opacity: 1;
-}
-
-.menu__items {
-  width: 300px;
-  height: 100vh;
-  margin: 0;
-  padding: 30px;
-  display: flex;
-  gap: 20px;
-  box-sizing: border-box;
-  flex-direction: column;
-  align-items: center;
-  text-decoration: none;
-  list-style-type: none;
-  font-weight: 400;
-  line-height: 1.06;
-  font-size: 20px;
-  background-color: rgb(42, 44, 47);
-  right: -300px;
-  position: absolute;
-  transition: right 0.3s;
-}
-
-@media (max-width: 600px) {
-  .menu__items {
-    width: 250px;
-    right: -250px;
-    font-size: 16px;    
+  &_visible {
+    visibility: visible;
+    opacity: 1;
   }
-}
 
-@media (max-width: 470px) {
-  .menu__items {
-    width: 200px;
-    right: -200px;
-    font-size: 12px;    
+  &__items {
+    @include menu(300px, 20px);
+    height: 100vh;
+    margin: 0;
+    padding: 30px;
+    display: flex;
+    gap: 20px;
+    box-sizing: border-box;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    list-style-type: none;
+    font-weight: 400;
+    line-height: 1.06;
+    background-color: rgb(42, 44, 47);
+    position: absolute;
+    transition: right 0.3s;
+
+    @media (max-width: 600px) {
+      & {
+        @include menu(250px, 16px);
+      }
+    }
+    
+    @media (max-width: 470px) {
+      & {
+        @include menu(200px, 12px);
+      }
+    }
+    
+    @media (max-width: 380px) {
+      & {
+        @include menu(160px, 9px);
+      }
+    }
+
+    &_visible {
+      right: 0;
+    }
   }
-}
 
-@media (max-width: 380px) {
-  .menu__items {
-    width: 160px;
-    right: -160px;
-    font-size: 9px;    
+  &__item {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    border: none;
+    background-color: transparent;
+
+    &_type_button {
+      @include button(10px 40px, 16px);
+      box-sizing: border-box;
+      border: 2px solid white;
+      border-radius: 25px;
+      text-transform: uppercase;
+      font-weight: 400;
+      line-height: 1;
+
+      &:hover {
+        cursor: pointer;
+        opacity: 0.8;
+      }
+
+      @media (max-width: 600px) {
+        & {
+          @include button(8px 32px, 12px);
+        }
+      }
+      
+      @media (max-width: 470px) {
+        & {
+          @include button(6px 24px, 10px);
+          border: 1px solid white;
+        }
+      }
+      
+      @media (max-width: 380px) {
+        & {
+          @include button(5px 20px, 8px);
+        }
+      }
+
+
+    }
+
+    
+
   }
+  
 }
 
-.menu__items_visible {
-  right: 0;
-}
 
-.menu__item {
-  margin: 0;
-  padding: 0;
-  display: flex;
-  align-items: center;
-  color: white;
-  text-decoration: none;
-  border: none;
-  background-color: transparent;
-}
 
-.menu__item_type_button {
-  padding: 10px 40px;
-  box-sizing: border-box;
-  border: 1px solid white;
-  border-radius: 25px;
-  text-transform: uppercase;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.06;
-}
 
-.menu__item_type_button:hover {
-  cursor: pointer;
-  opacity: 0.8;
-}
 
-@media (max-width: 600px) {
-  .menu__item_type_button {
-    padding: 8px 32px;
-    font-size: 12px;
-  }
-}
 
-@media (max-width: 470px) {
-  .menu__item_type_button {
-    padding: 6px 24px;
-    font-size: 10px;
-  }
-}
 
-@media (max-width: 380px) {
-  .menu__item_type_button {
-    padding: 5px 20px;
-    font-size: 8px;
-  }
-}
+
+
+
+
+
+
+
+
+
