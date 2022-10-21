@@ -1,0 +1,301 @@
+.card-scale {
+  width: 800px;
+  margin: 0;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+  background-color: antiquewhite;
+  /*background-image: url(../../images/card_background.jpg);*/
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: black;
+  border-radius: 10px;
+  border: 2px dashed #80B040;
+  box-shadow: 0 0 0 15px antiquewhite;
+}
+
+@media (max-width: 1100px) {
+  .card-scale {
+    width: 600px;
+    padding: 10px;
+    gap: 16px;
+    box-shadow: 0 0 0 10px antiquewhite;
+  }
+}
+
+@media (max-width: 767px) {
+  .card-scale {
+    width: 400px;
+    padding: 10px;
+    gap: 12px;
+    box-shadow: 0 0 0 7px antiquewhite;
+  }
+}
+
+@media (max-width: 470px) {
+  .card-scale {
+    width: 340px;
+    padding: 7px;
+    gap: 10px;
+    box-shadow: 0 0 0 4px antiquewhite;
+  }
+}
+
+@media (max-width: 380px) {
+  .card-scale {
+    width: 280px;
+    padding: 7px;
+    gap: 6px;
+    box-shadow: 0 0 0 2px antiquewhite;
+  }
+}
+
+.card-scale__title {
+  text-align: start;
+  margin: 0;
+  padding: 0 0 20px 0;
+  font-weight: 900;
+  font-size: 30px;
+  line-height: 1.06;
+  grid-area: title;
+}
+
+@media (max-width: 1100px) {
+  .card-scale__title {
+    font-size: 24px;
+    padding-bottom: 12px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .card-scale__title {
+    font-size: 18px;
+    padding-bottom: 6px;
+  }
+}
+
+@media (max-width: 470px) {
+  .card-scale__title {
+    font-size: 18px;
+    padding-bottom: 10px;
+  }
+}
+
+@media (max-width: 380px) {
+  .card-scale__title {
+    font-size: 16px;
+    padding-bottom: 6px;
+  }
+}
+
+.card-scale__place {
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+  grid-area: place;
+}
+
+.card-scale__main {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  column-gap: 20px;
+  grid-template-columns: auto 1fr;
+  grid-template-areas:
+      "image title"
+      "image gender"
+      "image birthday"
+      "image place"
+      "image about"
+      "image ."
+}
+
+@media (max-width: 1100px) {
+  .card-scale__main {
+    column-gap: 18px;
+    
+  }
+}
+
+@media (max-width: 767px) {
+  .card-scale__main {
+    column-gap: 12px;
+    row-gap: 3px;    
+  }
+}
+
+@media (max-width: 470px) {
+  .card-scale__main {
+    grid-template-areas:
+      "image title"
+      "image gender"
+      "image birthday"
+      "image place"
+      "image ."
+      "about about";
+    column-gap: 8px;
+  }
+}
+
+@media (max-width: 380px) {
+  .card-scale__main {
+    column-gap: 6px;
+    row-gap: 2px;
+  }
+}
+
+.card-scale__line-block-text {
+  margin: 0;
+  padding: 0;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.06;
+  letter-spacing: -1px;
+}
+
+@media (max-width: 1100px) {
+  .card-scale__line-block-text {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 767px) {
+  .card-scale__line-block-text {
+    font-size: 12px;
+    letter-spacing: -0.5px;
+  }
+}
+
+@media (max-width: 470px) {
+  .card-scale__line-block-text {
+    font-size: 12px;    
+  }
+}
+
+@media (max-width: 380px) {
+  .card-scale__line-block-text {
+    font-size: 10px;
+  }
+}
+
+.card-scale__line-block {
+  margin: 0;
+  padding: 2px 0;
+  display: flex;
+}
+
+@media (max-width: 470px) {
+  .card-scale__line-block {
+    padding: 1px 0;
+  }
+}
+
+.card-scale__information {
+  max-width: 500px;
+  margin: 0;
+  padding: 0 20px 0 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-scale__image {
+  margin: 0;
+  padding: 0;
+  width: 300px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 20px;
+  grid-area: image;
+}
+
+@media (max-width: 1100px) {
+  .card-scale__image {
+    width: 210px;
+    height: 280px;
+  }
+}
+
+@media (max-width: 767px) {
+  .card-scale__image {
+    width: 150px;
+    height: 200px;
+  }
+}
+
+@media (max-width: 470px) {
+  .card-scale__image {
+    width: 120px;
+    height: 160px;
+  }
+}
+
+@media (max-width: 380px) {
+  .card-scale__image {
+    width: 90px;
+    height: 120px;
+  }
+}
+
+.card-scale__gender {
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+  grid-area: gender;
+}
+
+.card-scale__birthday {
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+  grid-area: birthday;
+}
+
+.card-scale__about {
+  min-height: 200px;
+  max-height: 300px;
+  margin: 20px 0 0 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.06;
+  word-wrap: break-word;
+  overflow: auto;
+  grid-area: about;
+}
+
+@media (max-width: 1100px) {
+  .card-scale__about {
+    margin-top: 12;
+    min-height: 100px;
+    max-height: 150px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 767px) {
+  .card-scale__about {
+    margin-top: 8px;
+    min-height: 100px;
+    max-height: 200px;
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 470px) {
+  .card-scale__about {
+    padding: 0 5px;
+    margin-top: 6px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 380px) {
+  .card-scale__about {
+    margin-top: 4px;
+    font-size: 11px;
+  }
+}
