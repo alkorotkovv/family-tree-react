@@ -291,126 +291,96 @@
   position: relative;
   transition: 0.4s;
 }
-
 .card:hover {
   cursor: pointer;
   transform: scale(1.1);
   border-radius: 10px;
 }
-
 .card__content {
   width: 80px;
   height: 135px;
   margin: 5px;
+  border: 2px solid green;
+  border-radius: 8px;
   padding: 0;
   display: flex;
   flex-direction: column;
   position: relative;
   box-sizing: border-box;
-  border: 2px solid green;
-  border-radius: 10px;
   background-color: transparent;
 }
-
-.card__content:hover {
-  cursor: pointer;
-}
-
 @media (max-width: 1100px) {
   .card__content {
     width: 60px;
     height: 101.25px;
-    border-radius: 8px;
-    border: 2px solid green;
     margin: 4px;
+    border: 2px solid green;
+    border-radius: 8px;
   }
 }
 @media (max-width: 767px) {
   .card__content {
     width: 40px;
     height: 67.5px;
-    border-radius: 6px;
-    border: 2px solid green;
     margin: 3px;
+    border: 2px solid green;
+    border-radius: 6px;
   }
 }
 @media (max-width: 470px) {
   .card__content {
     width: 35px;
     height: 58px;
-    border-radius: 4px;
-    border: 1px solid green;
     margin: 1px;
+    border: 1px solid green;
+    border-radius: 5px;
   }
 }
-@media (max-width: 375px) {
+@media (max-width: 380px) {
   .card__content {
     width: 30px;
     height: 50px;
-    border-radius: 4px;
-    border: 1px solid green;
     margin: 1px;
+    border: 1px solid green;
+    border-radius: 4px;
   }
 }
 @media (max-width: 330px) {
   .card__content {
     width: 27px;
     height: 45px;
-    border-radius: 4px;
-    border: 1px solid green;
     margin: 1px;
+    border: 1px solid green;
+    border-radius: 4px;
   }
 }
 .card__content_male {
-  border: 2px solid #92d7ff;
-}
-
-@media (max-width: 470px) {
-  .card__content_male {
-    border: 1px solid #92d7ff;
-  }
-}
-@media (max-width: 330px) {
-  .card__content_male {
-    border: 1px solid #92d7ff;
-  }
+  border: 1px solid #92d7ff;
 }
 .card__content_female {
-  border: 2px solid #ff9bfa;
-}
-
-@media (max-width: 470px) {
-  .card__content_female {
-    border: 1px solid #ff9bfa;
-  }
-}
-@media (max-width: 330px) {
-  .card__content_female {
-    border: 1px solid #ff9bfa;
-  }
+  border: 1px solid #ff9bfa;
 }
 .card__image {
   height: 80px;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
   position: relative;
   box-sizing: border-box;
   object-fit: cover;
-  border-top-left-radius: 6px;
-  border-top-right-radius: 6px;
   pointer-events: none;
 }
-
 @media (max-width: 1100px) {
   .card__image {
     height: 60px;
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
   }
 }
 @media (max-width: 767px) {
   .card__image {
     height: 40px;
-    border-top-left-radius: 2px;
-    border-top-right-radius: 2px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
   }
 }
 @media (max-width: 470px) {
@@ -420,7 +390,7 @@
     border-top-right-radius: 3px;
   }
 }
-@media (max-width: 375px) {
+@media (max-width: 380px) {
   .card__image {
     height: 28px;
     border-top-left-radius: 3px;
@@ -436,21 +406,20 @@
 }
 .card__title {
   height: 55px;
+  padding: 5px 5px;
+  font-size: 12px;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
   margin: 0;
-  padding: 5px;
   box-sizing: border-box;
   font-weight: 400;
-  font-size: 12px;
   line-height: 1.2;
   text-align: center;
   background-color: #f80909;
-  border-bottom-left-radius: 6px;
-  border-bottom-right-radius: 6px;
   text-overflow: ellipsis;
   white-space: wrap;
   overflow: hidden;
 }
-
 @media (max-width: 1100px) {
   .card__title {
     height: 41.25px;
@@ -465,8 +434,8 @@
     height: 27.5px;
     padding: 2px 2px;
     font-size: 6px;
-    border-bottom-left-radius: 2px;
-    border-bottom-right-radius: 2px;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
   }
 }
 @media (max-width: 470px) {
@@ -478,7 +447,7 @@
     border-bottom-right-radius: 2px;
   }
 }
-@media (max-width: 375px) {
+@media (max-width: 380px) {
   .card__title {
     height: 20px;
     padding: 3px 1px;
@@ -499,17 +468,15 @@
 .card__title_male {
   background-color: #92d7ff;
 }
-
 .card__title_female {
   background-color: #ff9bfa;
 }
-
 .card__delete {
   width: 18px;
   height: 19px;
   margin: 0;
   padding: 0;
-  display: none;
+  display: flex;
   border: none;
   background: none;
   background-image: url(../images/urn.svg);
@@ -521,12 +488,10 @@
   right: 10px;
   opacity: 0.7;
 }
-
 .card__delete:hover {
   opacity: 1;
   cursor: pointer;
 }
-
 @media (max-width: 1100px) {
   .card__delete {
     width: 13px;
@@ -537,29 +502,10 @@
 }
 @media (max-width: 767px) {
   .card__delete {
-    width: 8px;
-    height: 9px;
-    top: 4px;
-    right: 4px;
-  }
-}
-@media (max-width: 550px) {
-  .card__delete {
-    width: 4px;
-    height: 5px;
-    top: 2px;
-    right: 2px;
-  }
-}
-.card__delete_visible {
-  display: flex;
-}
-
-@media (max-width: 767px) {
-  .card__delete_visible {
     display: none;
   }
 }
+
 .card-scale {
   width: 800px;
   padding: 15px;

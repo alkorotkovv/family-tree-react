@@ -44,7 +44,7 @@ function Card(props) {
           <img className="card__image" src={props.card.image.imageUrl} alt="фотография" />
           <h2 className={cardTitleClassName}>{props.card.name}</h2>        
       </div>
-      <button className="card__delete card__delete_visible" type="button" aria-label="Delete" onClick={handleCardDeleteClick} title="Удалить" />
+      <button className="card__delete" type="button" aria-label="Delete" onClick={handleCardDeleteClick} title="Удалить" />
     </li>
   )
 }
