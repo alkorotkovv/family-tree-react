@@ -85,6 +85,7 @@ function App() {
     setIsCardPopupVisible(false);
     setIsAckPopupVisible(false);
     setIsInfoTooltipPopupOpen(false);
+    setDefaultSelectedCard();
     setTimeout(setDefaultSelectedCard, 300);
   }
 
@@ -100,6 +101,7 @@ function App() {
     copy[index].area = index;
     setPersons(copy);
     setIsAddPersonPopupVisible(false);
+    setDefaultSelectedCard();
   }
 
   function handleCardClick(card) {
