@@ -25,4 +25,5 @@
 - SCSS
 - React
 
+Проект без бэкенда, логин: 1@1, пароль: 1@1
 ## Ссылка на GHPages: https://alkorotkovv.github.io/family-tree-react
