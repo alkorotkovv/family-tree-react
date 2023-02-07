@@ -24,6 +24,15 @@
 - JavaScript
 - SCSS
 - React
+## Установка:
+Node.js (v16.16.0)
+В корне проекта
+***npm install*** - установка необходимых пакетов
+***npm start*** - запуск проекта
+***npm run build*** - сборка в папку build
+***npm deploy*** - развернуть проект на GH Pages
+
+
 
 Проект без бэкенда, логин: 1@1, пароль: 1@1
 ## Ссылка на GHPages: https://alkorotkovv.github.io/family-tree-react
