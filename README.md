@@ -25,12 +25,12 @@
 - SCSS
 - React
 ## Установка:
-Node.js (v16.16.0)
-В корне проекта
-***npm install*** - установка необходимых пакетов
-***npm start*** - запуск проекта
-***npm run build*** - сборка в папку build
-***npm deploy*** - развернуть проект на GH Pages
+Node.js (v16.16.0)  
+В корне проекта  
+***npm install*** - установка необходимых пакетов  
+***npm start*** - запуск проекта  
+***npm run build*** - сборка в папку build  
+***npm deploy*** - развернуть проект на GH Pages  
 
 
 
